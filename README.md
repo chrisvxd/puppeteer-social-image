@@ -11,6 +11,7 @@ Suggestions for the API
 ```js
 const image = getImage({
   template: "Pretty",
+  output: "image.png", // Optional, if supplied write to path
   title: "Hello, world"
 });
 ```
