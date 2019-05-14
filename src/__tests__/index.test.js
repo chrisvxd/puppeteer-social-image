@@ -6,7 +6,7 @@ describe("puppeteer-social-image", () => {
       await getImage({
         template: "basic",
         templateParams: {
-          title: "Hello, world"
+          title: "Hello, twitter! @chrisvxd"
         },
         output: "image.png", // Optional, if supplied write to path
         size: "facebook" // Defaults to twitter, as smallest

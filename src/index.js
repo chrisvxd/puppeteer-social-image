@@ -5,8 +5,8 @@ import templates from "./templates";
 import tempy from "tempy";
 
 const sizeMap = {
-  facebook: { width: 1200, height: 320 },
-  twitter: { width: 1200, height: 640 }
+  facebook: { width: 1200, height: 630 },
+  twitter: { width: 1200, height: 630 }
 };
 
 /**
@@ -48,18 +48,18 @@ export const getImage = async ({
   const html = buildTemplate({ ...templateParams, size: _size });
   await page.setContent(html);
 
-  console.log(html);
-
   // Get root of page
   const pageFrame = page.mainFrame();
   const rootHandle = await pageFrame.$("body");
 
   // Take screenshot
-  const tempFile = tempy.file();
+  const tempFile = tempy.file({ extension: "png" });
   await rootHandle.screenshot({
     path: tempFile,
     omitBackground: true,
     type,
     quality: type === "jpeg" ? jpegQuality : undefined
   });
+
+  console.log("Wrote to", tempFile);
 };
