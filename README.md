@@ -11,8 +11,11 @@ Suggestions for the API
 ```js
 const image = getImage({
   template: "Pretty",
+  templateParams: {
+    title: "Hello, world"
+  },
   output: "image.png", // Optional, if supplied write to path
-  title: "Hello, world"
+  size: "facebook" // Defaults to twitter, as smallest
 });
 ```
 
@@ -21,18 +24,8 @@ const image = getImage({
 ```js
 const image = registerTemplate({
   template: "Pretty",
-  html: "<div>{{title}}</div>"
-});
-```
-
-### getImage() alternative
-
-```js
-const image = getImage({
-  templateParams: {
-    title: "Hello, world"
-  },
-  template: "Pretty"
+  body: "<div>{title}</div>",
+  styles: "body { background: rebeccapurple }"
 });
 ```
 
