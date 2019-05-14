@@ -1,5 +1,18 @@
+import { getImage } from "../index";
+
 describe("puppeteer-social-image", () => {
-  it("must have at least 1 test", () => {
-    expect(true);
+  describe("getImage", () => {
+    it("must generate an image as expected", () => {
+      getImage({
+        template: "Pretty",
+        templateParams: {
+          title: "Hello, world"
+        },
+        output: "image.png", // Optional, if supplied write to path
+        size: "facebook" // Defaults to twitter, as smallest
+      });
+
+      expect(true);
+    });
   });
 });
