@@ -1,5 +1,3 @@
-// import styles from "./styles.css";
-
 export default ({ body, head = "", styles = "", size }) => {
   const { width, height } = size;
 

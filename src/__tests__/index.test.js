@@ -2,9 +2,9 @@ import { getImage } from "../index";
 
 describe("puppeteer-social-image", () => {
   describe("getImage", () => {
-    it("must generate an image as expected", () => {
-      getImage({
-        template: "Pretty",
+    it("must generate an image as expected", async () => {
+      await getImage({
+        template: "basic",
         templateParams: {
           title: "Hello, world"
         },

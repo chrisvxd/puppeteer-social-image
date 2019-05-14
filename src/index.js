@@ -1,3 +1,4 @@
+import "@babel/polyfill";
 import path from "path";
 import puppeteer from "puppeteer";
 import templates from "./templates";
@@ -22,7 +23,7 @@ export const getImage = async ({
   jpegQuality = 90,
   output,
   size = "twitter",
-  template,
+  template = "basic",
   templateParams
 }) => {
   // Resolve preferences
