@@ -64,13 +64,15 @@
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-json": "~1.4.0",
     "jest": "^24.4.0",
+    "jest-image-snapshot": "^2.8.1",
     "npm-run-all": "^4.1.5",
     "prettier": "~1.16.4",
     "remark-cli": "^6.0.1",
     "remark-lint": "^6.0.4",
     "remark-preset-lint-consistent": "2.0.2",
     "remark-preset-lint-recommended": "3.0.2",
-    "rimraf": "^2.6.3"
+    "rimraf": "^2.6.3",
+    "tempy": "^0.3.0"
   },
   "config": {
     "commitizen": {
@@ -85,6 +87,7 @@
     "transform": {
       "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
       "^.+\\.hbs$": "<rootDir>/node_modules/handlebars-jest"
-    }
+    },
+    "setupFilesAfterEnv": ["<rootDir>/jest-setup.js"]
   }
 }

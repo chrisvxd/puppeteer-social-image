@@ -1,19 +1,27 @@
+import fs from "fs";
+import tempy from "tempy";
 import renderSocialImage from "../index";
 
 describe("puppeteer-social-image", () => {
   describe("renderSocialImage", () => {
+    let tempPath;
+
+    beforeEach(() => {
+      tempPath = tempy.file({ extension: "png" });
+    });
+
     it("must generate an image as expected", async () => {
       await renderSocialImage({
-        template: "basic",
         templateParams: {
           title: "Hello, twitter! @chrisvxd"
         },
-        output: "image.png", // Optional, if supplied write to path
-        size: "facebook" // Defaults to twitter, as smallest
+        output: tempPath,
+        size: "facebook"
       });
 
-      // TODO sort this
-      expect(true);
+      const testImage = fs.readFileSync(tempPath);
+
+      expect(testImage).toMatchImageSnapshot();
     });
 
     it("must generate an image with a custom template", async () => {
@@ -23,6 +31,7 @@ describe("puppeteer-social-image", () => {
         .Main {
           align-items: center;
           background: rebeccapurple;
+          color: white;
           display: flex;
           justify-content: center;
           font-family: "Avenir Next", "Lato", "Helvetica Neue", sans-serif;
@@ -39,12 +48,14 @@ describe("puppeteer-social-image", () => {
         templateBody: body,
         templateStyles: styles,
         templateParams: {
-          name: "Tony"
+          name: "@chrisvxd"
         },
-        output: "image.png" // Optional, if supplied write to path
+        output: tempPath
       });
 
-      expect(true);
+      const testImage = fs.readFileSync(tempPath);
+
+      expect(testImage).toMatchImageSnapshot();
     });
 
     it("must generate an image with a custom template when providing multiple custom templates", async () => {
@@ -80,12 +91,14 @@ describe("puppeteer-social-image", () => {
         },
         template: "bar",
         templateParams: {
-          name: "Tony"
+          name: "chrisvxd"
         },
-        output: "image.png" // Optional, if supplied write to path
+        output: tempPath
       });
 
-      expect(true);
+      const testImage = fs.readFileSync(tempPath);
+
+      expect(testImage).toMatchImageSnapshot();
     });
   });
 });
