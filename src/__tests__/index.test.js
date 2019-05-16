@@ -1,9 +1,9 @@
-import { getImage } from "../index";
+import renderSocialImage from "../index";
 
 describe("puppeteer-social-image", () => {
-  describe("getImage", () => {
+  describe("renderSocialImage", () => {
     it("must generate an image as expected", async () => {
-      await getImage({
+      await renderSocialImage({
         template: "basic",
         templateParams: {
           title: "Hello, twitter! @chrisvxd"
@@ -35,7 +35,7 @@ describe("puppeteer-social-image", () => {
         }
       `;
 
-      await getImage({
+      await renderSocialImage({
         templateBody: body,
         templateStyles: styles,
         templateParams: {
@@ -67,7 +67,7 @@ describe("puppeteer-social-image", () => {
         }
       `;
 
-      await getImage({
+      await renderSocialImage({
         customTemplates: {
           foo: {
             body,

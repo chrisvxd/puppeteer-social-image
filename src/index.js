@@ -20,7 +20,7 @@ const sizeMap = {
  *
  * @return {Promise}
  */
-export const getImage = async ({
+export default async ({
   jpegQuality = 90,
   output,
   size = "twitter",

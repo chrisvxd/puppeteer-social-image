@@ -2,15 +2,15 @@
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-prettier-brightgreen.svg)](https://prettier.io)
 
-## API
+## Examples
 
-Suggestions for the API
-
-### getImage()
+### Render basic template
 
 ```js
-const image = getImage({
-  template: "Pretty",
+import renderSocialImage from "puppeteer-social-image";
+
+const image = renderSocialImage({
+  template: "basic",
   templateParams: {
     title: "Hello, world"
   },
@@ -19,13 +19,17 @@ const image = getImage({
 });
 ```
 
-### registerTemplate()
+### Render custom template
 
 ```js
-const image = registerTemplate({
+import renderSocialImage from "puppeteer-social-image";
+
+const image = renderSocialImage({
   template: "Pretty",
-  body: "<div>{title}</div>",
-  styles: "body { background: rebeccapurple }"
+  templateBody: '<div class="Main">Hello, {{name}}!</div>',
+  templateStyles: ".Main { color: blue; }",
+  output: "image.png", // Optional, if supplied write to path
+  size: "facebook" // Defaults to twitter, as smallest
 });
 ```
 
