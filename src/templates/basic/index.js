@@ -1,4 +1,5 @@
-import buildBase from "../base";
+import { baseTemplate } from "../base";
+import basicTemplate from "./template.hbs";
 
 const buildStyles = ({
   backgroundImageUrl = "https://images.unsplash.com/photo-1557787108-f84b241bf836?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
@@ -19,9 +20,10 @@ const buildStyles = ({
 }
 `;
 
-export default ({ size, title }) =>
-  buildBase({
-    body: `<div class="Main">${title}</div>`,
-    size,
-    styles: buildStyles()
+export default ({ size, templateParams }) =>
+  baseTemplate({
+    body: basicTemplate(templateParams),
+    height: size.height,
+    styles: buildStyles(),
+    width: size.width
   });

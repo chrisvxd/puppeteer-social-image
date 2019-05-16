@@ -45,7 +45,8 @@ export const getImage = async ({
   });
 
   // Build template and set to puppeteer
-  const html = buildTemplate({ ...templateParams, size: _size });
+  const html = buildTemplate({ templateParams, size: _size });
+
   await page.setContent(html);
 
   // Get root of page

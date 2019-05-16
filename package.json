@@ -45,6 +45,8 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
+    "handlebars": "^4.1.2",
+    "handlebars-jest": "^0.5.0",
     "puppeteer": "^1.16.0",
     "tempy": "^0.3.0"
   },
@@ -55,7 +57,7 @@
     "@commitlint/cli": "^7.5.2",
     "@commitlint/config-angular": "^7.5.0",
     "babel-eslint": "^10.0.1",
-    "babel-jest": "^24.4.0",
+    "babel-jest": "^24.8.0",
     "commitizen": "^3.0.7",
     "conventional-changelog-cli": "^2.0.12",
     "conventional-recommended-bump": "^4.0.4",
@@ -78,6 +80,12 @@
   },
   "jest": {
     "collectCoverage": true,
-    "collectCoverageFrom": ["<rootDir>/src/**/*.{js,jsx,ts,tsx}"]
+    "collectCoverageFrom": [
+      "<rootDir>/src/**/*.{js,jsx,ts,tsx}"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.hbs$": "<rootDir>/node_modules/handlebars-jest"
+    }
   }
 }
