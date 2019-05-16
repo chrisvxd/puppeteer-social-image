@@ -2,7 +2,6 @@ import "@babel/polyfill";
 import path from "path";
 import puppeteer from "puppeteer";
 import templates, { baseTemplate } from "./templates";
-import tempy from "tempy";
 import { compile } from "handlebars";
 
 const sizeMap = {
@@ -48,7 +47,6 @@ export default async ({
     width,
     height
   });
-
   // Using template builders instead of handlebars templates allows
   // us to hide size, body and styles from the user template
 
@@ -75,13 +73,10 @@ export default async ({
   const rootHandle = await pageFrame.$("body");
 
   // Take screenshot
-  const tempFile = tempy.file({ extension: "png" });
   await rootHandle.screenshot({
-    path: tempFile,
+    path: output,
     omitBackground: true,
     type,
     quality: type === "jpeg" ? jpegQuality : undefined
   });
-
-  console.log("Wrote to", tempFile);
 };

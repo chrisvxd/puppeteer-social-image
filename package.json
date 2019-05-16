@@ -47,8 +47,7 @@
     "@babel/polyfill": "^7.4.4",
     "handlebars": "^4.1.2",
     "handlebars-jest": "^0.5.0",
-    "puppeteer": "^1.16.0",
-    "tempy": "^0.3.0"
+    "puppeteer": "^1.16.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
