@@ -22,6 +22,8 @@ import renderSocialImage from "puppeteer-social-image";
 renderSocialImage({
   template: "basic",
   templateParams: {
+    backgroundImageUrl:
+      "https://images.unsplash.com/photo-1557958114-3d2440207108?w=1950&q=80",
     title: "Hello, world"
   },
   output: "image.png",
