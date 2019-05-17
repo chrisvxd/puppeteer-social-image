@@ -2,20 +2,30 @@
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-prettier-brightgreen.svg)](https://prettier.io)
 
-## Examples
+Create dynamic social share images using HTML + CSS via puppeteer.
 
-### Render basic template
+![img](https://i.ibb.co/YtTbGHB/Artboard1.png)
+
+## Installation
+
+```sh
+npm i puppeteer-social-image --save
+```
+
+## Usage
+
+### Render "basic" template
 
 ```js
 import renderSocialImage from "puppeteer-social-image";
 
-const image = renderSocialImage({
+renderSocialImage({
   template: "basic",
   templateParams: {
     title: "Hello, world"
   },
-  output: "image.png", // Optional, if supplied write to path
-  size: "facebook" // Defaults to twitter, as smallest
+  output: "image.png",
+  size: "facebook"
 });
 ```
 
@@ -24,14 +34,51 @@ const image = renderSocialImage({
 ```js
 import renderSocialImage from "puppeteer-social-image";
 
-const image = renderSocialImage({
+renderSocialImage({
   template: "Pretty",
   templateBody: '<div class="Main">Hello, {{name}}!</div>',
   templateStyles: ".Main { color: blue; }",
-  output: "image.png", // Optional, if supplied write to path
-  size: "facebook" // Defaults to twitter, as smallest
+  output: "image.png",
+  size: "facebook"
 });
 ```
+
+## API
+
+### renderSocialImage
+
+Returns `Promise`.
+
+Type: function (opts): Promise
+
+- `opts` (object) Configuration options
+- `opts.template` (string) Name of a prebuild template. Valid values are:
+  - `basic`
+- `opts.templateParams` (object) Params to be passed to the template. If using prebuilt templates, see below for APIs.
+- `opts.templateBody` (string) Handlebars template to render in the body for a custom template. Populated with templateParams.
+- `opts.templateStyles` (string) CSS to use for a custom template. Passed to the head.
+- `opts.customTemplates` (object) Define multiple custom templates
+  - `opts.customTemplates[key]` (string) Name for the customTemplate
+  - `opts.customTemplates[key].templateBody`(string) Handlebars template to render in the body for this custom template. Populated with templateParams.
+  - `opts.customTemplates[key].templateBody`(string) CSS to use for this custom template. Passed to the head
+- `opts.output` (string) Path to write image
+- `opts.size` (string?) Preset size for the image. Valid values are:
+  - `facebook`
+  - `twitter` (default)
+
+## Templates
+
+### Basic
+
+A basic template to show some short text overlaying an image.
+
+#### API
+
+- `title` (string) Title text for the image
+- `backgroundImageUrl` (string) URL for the background image
+- `color` (string) Color for the title
+- `fontFamily` (string) Font family
+- `fontSize` (string) Font size
 
 ## License
 
