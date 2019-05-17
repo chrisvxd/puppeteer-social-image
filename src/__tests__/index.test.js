@@ -24,6 +24,79 @@ describe("puppeteer-social-image", () => {
       expect(testImage).toMatchImageSnapshot();
     });
 
+    describe("basicTemplate", () => {
+      it("must accept backgroundImageUrl param", async () => {
+        await renderSocialImage({
+          templateParams: {
+            title: "Hello, twitter! @chrisvxd",
+            backgroundImageUrl:
+              "https://images.unsplash.com/photo-1557996199-8d219159a1d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=30"
+          },
+          output: tempPath
+        });
+
+        const testImage = fs.readFileSync(tempPath);
+
+        expect(testImage).toMatchImageSnapshot();
+      });
+
+      it("must accept color param", async () => {
+        await renderSocialImage({
+          templateParams: {
+            title: "Hello, twitter! @chrisvxd",
+            color: "hotpink"
+          },
+          output: tempPath
+        });
+
+        const testImage = fs.readFileSync(tempPath);
+
+        expect(testImage).toMatchImageSnapshot();
+      });
+
+      it("must accept fontFamily param", async () => {
+        await renderSocialImage({
+          templateParams: {
+            title: "Hello, twitter! @chrisvxd",
+            fontFamily: '"Times New Roman"'
+          },
+          output: tempPath
+        });
+
+        const testImage = fs.readFileSync(tempPath);
+
+        expect(testImage).toMatchImageSnapshot();
+      });
+
+      it("must accept fontSize param", async () => {
+        await renderSocialImage({
+          templateParams: {
+            title: "Hello, twitter! @chrisvxd",
+            fontSize: "64px"
+          },
+          output: tempPath
+        });
+
+        const testImage = fs.readFileSync(tempPath);
+
+        expect(testImage).toMatchImageSnapshot();
+      });
+
+      it("must accept fontWeight param", async () => {
+        await renderSocialImage({
+          templateParams: {
+            title: "Hello, twitter! @chrisvxd",
+            fontSize: "64px"
+          },
+          output: tempPath
+        });
+
+        const testImage = fs.readFileSync(tempPath);
+
+        expect(testImage).toMatchImageSnapshot();
+      });
+    });
+
     it("must generate an image with a custom template", async () => {
       const body = `<div class="Main">Hello, {{name}}!</div>`;
 
