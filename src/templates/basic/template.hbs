@@ -1,10 +1,10 @@
 <div class="Main">
-  <div class="Background">
+  {{#if backgroundImageUrl}}<div class="Background">
     <div
       class="Image Image--cover Image--anchor{{backgroundImageAnchor}}  {{#if backgroundImageOverlay}}Image--overlay Image--dark{{/if}}">
       <img class="Image-img" src="{{backgroundImageUrl}}" />
     </div>
-  </div>
+  </div>{{/if}}
   <div class="Inner">
     {{title}}
   </div>

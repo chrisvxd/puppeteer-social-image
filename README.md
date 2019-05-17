@@ -78,6 +78,7 @@ A basic template to show some short text overlaying an image.
 - `backgroundImageUrl` (string?) URL for the background image
 - `backgroundImageAnchor` (string?, default `"C"`) Anchor point for the background image. Valid options are `C`, `N`, `NE`, `E`, `SE`, `S`, `SW`, `W` or `NW`.
 - `backgroundImageOverlay` (boolean?, default `true`) Add a dark overlay on top of the background image
+- `background` (string?) CSS background prop. Prefer `backgroundImageUrl` if using image.
 - `color` (string?, default `"white"`) Color for the title
 - `fontFamily` (string?, default `'"Avenir Next", "Lato", "Helvetica Neue", sans-serif'`) Font family
 - `fontSize` (string?, default `"128px"`) Font size

@@ -3,6 +3,8 @@ import basicTemplate from "./template.hbs";
 import ImageCss from "./ImageCss.js";
 
 const buildStyles = ({
+  background = "black",
+  backgroundImageUrl,
   color = "white",
   fontFamily = '"Avenir Next", "Lato", "Helvetica Neue", sans-serif',
   fontSize = "128px",
@@ -20,13 +22,16 @@ const buildStyles = ({
 ${ImageCss};
 
 .Main {
+  background: ${backgroundImageUrl ? "transparent" : background};
   position: relative;
   width: 100%;
   height: 100%;
+  z-index: -2;
 }
 
 .Inner {
   align-items: center;
+  background: ${backgroundImageUrl ? "transparent" : background};
   color: ${color};
   display: flex;
   justify-content: center;
@@ -45,8 +50,6 @@ export default ({ size, templateParams }) =>
     body: basicTemplate({
       backgroundImageAnchor: "C",
       backgroundImageOverlay: true,
-      backgroundImageUrl:
-        "https://images.unsplash.com/photo-1557787108-f84b241bf836?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
       ...templateParams
     }),
     height: size.height,

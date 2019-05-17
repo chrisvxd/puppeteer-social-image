@@ -40,6 +40,20 @@ describe("puppeteer-social-image", () => {
         expect(testImage).toMatchImageSnapshot();
       });
 
+      it("must accept background param", async () => {
+        await renderSocialImage({
+          templateParams: {
+            title: "Hello, twitter! @chrisvxd",
+            background: "blue"
+          },
+          output: tempPath
+        });
+
+        const testImage = fs.readFileSync(tempPath);
+
+        expect(testImage).toMatchImageSnapshot();
+      });
+
       it("must accept color param", async () => {
         await renderSocialImage({
           templateParams: {
