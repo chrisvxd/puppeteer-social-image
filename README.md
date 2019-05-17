@@ -76,7 +76,9 @@ A basic template to show some short text overlaying an image.
 
 - `title` (string) Title text for the image
 - `backgroundImageUrl` (string) URL for the background image
-- `color` (string) Color for the title
+- `backgroundImageAnchor` (string) Anchor point for the background image. Valid options are `C`, `N`, `NE`, `E`, `SE`, `S`, `SW`, `W` or `NW`.
+- `backgroundImageOverlay` (boolean, default `true`) Add a dark overlay on top of the background image
+- `color` (string, default `"white"`) Color for the title
 - `fontFamily` (string) Font family
 - `fontSize` (string) Font size
 

@@ -86,7 +86,7 @@ describe("puppeteer-social-image", () => {
         await renderSocialImage({
           templateParams: {
             title: "Hello, twitter! @chrisvxd",
-            fontSize: "64px"
+            fontWeight: "400"
           },
           output: tempPath
         });
