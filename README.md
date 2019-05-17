@@ -74,6 +74,8 @@ Type: function (opts): Promise
 
 A basic template to show some short text overlaying an image.
 
+![basic template](https://i.ibb.co/pvc16gx/Group.png)
+
 #### API
 
 - `title` (string) Title text for the image
