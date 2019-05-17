@@ -53,7 +53,7 @@ Type: function (opts): Promise
 
 - `opts` (object) Configuration options
 - `opts.template` (string) Name of a prebuild template. Valid values are:
-  - `basic`
+  - `basic` (default)
 - `opts.templateParams` (object) Params to be passed to the template. If using prebuilt templates, see below for APIs.
 - `opts.templateBody` (string?) Handlebars template to render in the body for a custom template. Populated with templateParams.
 - `opts.templateStyles` (string?) CSS to use for a custom template. Passed to the head.
@@ -76,11 +76,11 @@ A basic template to show some short text overlaying an image.
 
 - `title` (string) Title text for the image
 - `backgroundImageUrl` (string?) URL for the background image
-- `backgroundImageAnchor` (string?) Anchor point for the background image. Valid options are `C`, `N`, `NE`, `E`, `SE`, `S`, `SW`, `W` or `NW`.
+- `backgroundImageAnchor` (string?, default `"C"`) Anchor point for the background image. Valid options are `C`, `N`, `NE`, `E`, `SE`, `S`, `SW`, `W` or `NW`.
 - `backgroundImageOverlay` (boolean?, default `true`) Add a dark overlay on top of the background image
 - `color` (string?, default `"white"`) Color for the title
-- `fontFamily` (string?) Font family
-- `fontSize` (string?) Font size
+- `fontFamily` (string?, default `'"Avenir Next", "Lato", "Helvetica Neue", sans-serif'`) Font family
+- `fontSize` (string?, default `"128px"`) Font size
 
 ## License
 
