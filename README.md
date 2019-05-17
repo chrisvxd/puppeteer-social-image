@@ -4,7 +4,7 @@
 
 Create dynamic social share images using HTML + CSS via puppeteer.
 
-![img](https://i.ibb.co/YtTbGHB/Artboard1.png)
+![img](https://i.ibb.co/PwVm1ky/Artboard.png)
 
 ## Installation
 
