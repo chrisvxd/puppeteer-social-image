@@ -98,6 +98,8 @@
       "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
       "^.+\\.hbs$": "<rootDir>/node_modules/handlebars-jest"
     },
-    "setupFilesAfterEnv": ["<rootDir>/jest-setup.js"]
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest-setup.js"
+    ]
   }
 }
