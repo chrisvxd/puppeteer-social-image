@@ -1,6 +1,20 @@
 import { baseTemplate } from "../base";
-import basicTemplate from "./template.hbs";
 import ImageCss from "./ImageCss.js";
+const handlebars = require("handlebars");
+
+export const basicTemplate = handlebars.compile(`
+<div class="Main">
+  {{#if backgroundImageUrl}}<div class="Background">
+    <div
+      class="Image Image--cover Image--anchor{{backgroundImageAnchor}}  {{#if backgroundImageOverlay}}Image--overlay Image--dark{{/if}}">
+      <img class="Image-img" src="{{backgroundImageUrl}}" />
+    </div>
+  </div>{{/if}}
+  <div class="Inner">
+    {{title}}
+  </div>
+</div>
+`);
 
 const buildStyles = ({
   background = "black",

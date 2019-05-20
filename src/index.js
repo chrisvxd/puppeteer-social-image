@@ -1,8 +1,10 @@
 import "@babel/polyfill";
 import path from "path";
-import puppeteer from "puppeteer";
 import templates, { baseTemplate } from "./templates";
-import { compile } from "handlebars";
+
+// Use commonjs to ensure rollup works
+const handlebars = require("handlebars");
+const puppeteer = require("puppeteer");
 
 const sizeMap = {
   facebook: { width: 1200, height: 630 },
@@ -59,7 +61,7 @@ export default async ({
 
   const html = usingCustomTemplate
     ? baseTemplate({
-        body: compile(customBody)(templateParams),
+        body: handlebars.compile(customBody)(templateParams),
         height: size.height,
         styles: customStyles,
         width: size.width
