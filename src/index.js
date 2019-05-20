@@ -13,13 +13,6 @@ const sizeMap = {
 
 /**
  * Renders the given HTML as an image via Puppeteer.
- *
- * @name getImage
- * @function
- *
- * @param {object} opts - Configuration options
- *
- * @return {Promise}
  */
 export default async ({
   jpegQuality = 90,
