@@ -82,5 +82,7 @@ export default async ({
     quality: type === "jpeg" ? jpegQuality : undefined
   });
 
+  browser.close();
+
   return screenshot;
 };
