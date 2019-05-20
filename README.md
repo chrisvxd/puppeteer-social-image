@@ -49,7 +49,7 @@ renderSocialImage({
 
 ### renderSocialImage
 
-Returns `Promise`.
+Returns `Promise<Buffer>`.
 
 Type: function (opts): Promise
 
@@ -63,7 +63,7 @@ Type: function (opts): Promise
   - `opts.customTemplates[key]` (string) Name for the customTemplate
   - `opts.customTemplates[key].templateBody`(string) Handlebars template to render in the body for this custom template. Populated with templateParams.
   - `opts.customTemplates[key].templateBody`(string) CSS to use for this custom template. Passed to the head
-- `opts.output` (string) Path to write image
+- `opts.output` (string?) Path to write image
 - `opts.size` (string?) Preset size for the image. Valid values are:
   - `facebook`
   - `twitter` (default)

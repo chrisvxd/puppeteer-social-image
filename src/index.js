@@ -75,10 +75,12 @@ export default async ({
   const rootHandle = await pageFrame.$("body");
 
   // Take screenshot
-  await rootHandle.screenshot({
+  const screenshot = await rootHandle.screenshot({
     path: output,
     omitBackground: true,
     type,
     quality: type === "jpeg" ? jpegQuality : undefined
   });
+
+  return screenshot;
 };

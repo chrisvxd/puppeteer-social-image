@@ -12,6 +12,7 @@
     "url": "https://github.com/chrisvxd/puppeteer-social-image/issues"
   },
   "main": "dist/index.js",
+  "module": "dist/index.es.js",
   "files": [
     "dist/"
   ],
