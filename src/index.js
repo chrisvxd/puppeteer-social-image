@@ -40,7 +40,7 @@ export default async ({
     .extname(output)
     .slice(1)
     .toLowerCase();
-  const type = ext === "png" ? "png" : "jpeg";
+  const type = ext === "jpg" || ext === "jpeg" ? "jpeg" : "png";
 
   // Setup puppeteer
   const browser = await puppeteer.launch();
