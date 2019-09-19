@@ -1,5 +1,5 @@
 {
-  "name": "puppeteer-social-image",
+  "name": "puppeteer-social-image-lambda",
   "version": "0.1.1",
   "description": "Create dynamic social share images using HTML + CSS via puppeteer.",
   "homepage": "https://github.com/chrisvxd/puppeteer-social-image",
