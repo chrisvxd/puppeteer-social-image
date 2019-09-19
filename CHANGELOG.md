@@ -1,3 +1,17 @@
+# [0.2.0](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.1.1...v0.2.0) (2019-09-19)
+
+
+### Bug Fixes
+
+* add missing options for headless puppeteer ([33670cf](https://github.com/chrisvxd/puppeteer-social-image/commit/33670cf))
+
+
+### Features
+
+* switch to lambda-friendly puppeteer ([2ffa4cb](https://github.com/chrisvxd/puppeteer-social-image/commit/2ffa4cb))
+
+
+
 ## [0.1.1](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.1.0...v0.1.1) (2019-05-20)
 
 
