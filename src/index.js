@@ -37,7 +37,11 @@ export default async ({
   const type = ext === "jpg" || ext === "jpeg" ? "jpeg" : "png";
 
   // Setup puppeteer
-  const browser = await puppeteer.launch({ headless: chrome.headless });
+  const browser = await puppeteer.launch({
+    args: chrome.args,
+    executablePath: await chrome.executablePath,
+    headless: chrome.headless
+  });
   const page = await browser.newPage();
   await page.setViewport({
     width,
