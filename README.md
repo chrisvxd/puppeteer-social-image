@@ -37,7 +37,6 @@ renderSocialImage({
 import renderSocialImage from "puppeteer-social-image";
 
 renderSocialImage({
-  template: "Pretty",
   templateBody: '<div class="Main">Hello, {{name}}!</div>',
   templateStyles: ".Main { color: blue; }",
   output: "image.png",
@@ -54,7 +53,7 @@ Returns `Promise<Buffer>`.
 Type: function (opts): Promise
 
 - `opts` (object) Configuration options
-- `opts.template` (string) Name of a prebuild template. Valid values are:
+- `opts.template` (string) Name of a prebuilt template. Valid values are:
   - `basic` (default)
 - `opts.templateParams` (object) Params to be passed to the template. If using prebuilt templates, see below for APIs.
 - `opts.templateBody` (string?) Handlebars template to render in the body for a custom template. Populated with templateParams.
