@@ -4,8 +4,7 @@ import templates, { baseTemplate } from "./templates";
 
 // Use commonjs to ensure rollup works
 const handlebars = require("handlebars");
-const chrome = require("chrome-aws-lambda");
-const puppeteer = require("puppeteer-core");
+const puppeteer = require("puppeteer-serverless").default;
 
 const sizeMap = {
   facebook: { width: 1200, height: 630 },
@@ -37,11 +36,7 @@ export default async ({
   const type = ext === "jpg" || ext === "jpeg" ? "jpeg" : "png";
 
   // Setup puppeteer
-  const browser = await puppeteer.launch({
-    args: chrome.args,
-    executablePath: await chrome.executablePath,
-    headless: chrome.headless
-  });
+  const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.setViewport({
     width,

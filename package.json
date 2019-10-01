@@ -28,7 +28,7 @@
     "lint:format": "yarn run internal:prettier --list-different",
     "precompile": "if [ ${SKIP_CLEANUP:-0} -ne 1 ]; then rimraf lib/*; fi",
     "prepublishOnly": "yarn compile",
-    "test": "jest src --modulePathIgnorePatterns \"<rootDir>/dist/\"",
+    "test": "export NODE_ENV=development && jest src --modulePathIgnorePatterns \"<rootDir>/dist/\"",
     "release": "conventional-recommended-bump -p angular | xargs yarn version --new-version$1",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
   },
@@ -46,10 +46,9 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
-    "chrome-aws-lambda": "^1.17.1",
     "handlebars": "^4.1.2",
     "handlebars-jest": "^0.5.0",
-    "puppeteer-core": "^1.17.0"
+    "puppeteer-serverless": "^0.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
