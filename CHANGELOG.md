@@ -1,4 +1,4 @@
-# [0.3.0](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.1.1...v0.3.0) (2019-10-01)
+# [0.4.0](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.1.1...v0.4.0) (2019-10-09)
 
 
 ### Bug Fixes
