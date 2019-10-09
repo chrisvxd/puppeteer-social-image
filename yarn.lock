@@ -1767,10 +1767,10 @@ chownr@^1.1.1:
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-1.1.1.tgz#54726b8b8fff4df053c42187e801fb4412df1494"
   integrity sha512-j38EvO5+LHX84jlo6h4UzmOwi0UgW61WRyPtJz4qaadK5eY3BTS5TY/S1Stc3Uk2lIM6TPevAlULiEJwie860g==
 
-chrome-aws-lambda@^1.19.0:
-  version "1.20.0"
-  resolved "https://registry.yarnpkg.com/chrome-aws-lambda/-/chrome-aws-lambda-1.20.0.tgz#134d62bd44e664304bb04aa278798911692779e9"
-  integrity sha512-RBvb2JXWoD38zONmSlykPibeKmfxxLMPyV4z29SuMGPBmglJpGbbjoqDiYeNKKtZZftsAib8SeFYvkbg5OIapA==
+chrome-aws-lambda@^1.20.1:
+  version "1.20.1"
+  resolved "https://registry.yarnpkg.com/chrome-aws-lambda/-/chrome-aws-lambda-1.20.1.tgz#d63c1332d2bfafc7fdac0b91aeba6bfb962aed34"
+  integrity sha512-qFebQehXLEoRgngNl9c04V8H9oEtaDSRPqFT3qivN1px78pyG4bLgXsnsGEtMvW9QZapEajTP9h5gfOxSgNs9g==
 
 ci-info@^2.0.0:
   version "2.0.0"
@@ -5761,12 +5761,12 @@ puppeteer-core@^1.19.0:
     rimraf "^2.6.1"
     ws "^6.1.0"
 
-puppeteer-serverless@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/puppeteer-serverless/-/puppeteer-serverless-0.1.0.tgz#dd30105e23fb19c228469653638b392df4e5f3ec"
-  integrity sha512-QMActPDGdQJZcIWV44Tazj6EJoFywI/E84djZFFZRjdOaalN7KLX0k2gmmfPKtjVKYa1oJRXtAEOGk2L5y8zhA==
+puppeteer-serverless@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/puppeteer-serverless/-/puppeteer-serverless-0.2.0.tgz#e96ef2592971ccf6d33580eeee3e2a5dcafc69b5"
+  integrity sha512-S+/SwPooZvTbga4aVeo2pIjKkecMKxZFcxRpzuNjVYV0UtsLvnu2GHG8WpcrwDJnEBvPlih+f5cBv3x4OY04Dw==
   dependencies:
-    chrome-aws-lambda "^1.19.0"
+    chrome-aws-lambda "^1.20.1"
     puppeteer-core "^1.19.0"
 
 q@^1.5.1:
