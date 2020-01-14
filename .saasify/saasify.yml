@@ -1,6 +1,7 @@
 name: puppeteer-og-image
 services:
   - src: src/image.ts
+    immutable: true
     POST: false
     examples:
       - name: Request image from basic template (free)
