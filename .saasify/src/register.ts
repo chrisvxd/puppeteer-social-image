@@ -20,10 +20,13 @@ export default async function register(
 }> {
   const docRef = db.collection('templates').doc(template);
 
-  await docRef.set({
-    body,
-    styles
-  });
+  // Don't fail if template exists, to allow saasify to execute example every time
+  try {
+    await docRef.set({
+      body,
+      styles
+    });
+  } catch {}
 
   return {
     template,
