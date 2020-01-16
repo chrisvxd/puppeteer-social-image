@@ -180,3 +180,7 @@ Now we can render our template using the `/image` URL as before
 #### Additional templates
 
 More templates will be added in the near future.
+
+## License
+
+MIT © [Chris Villa](http://www.chrisvilla.co.uk)
