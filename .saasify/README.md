@@ -1,4 +1,4 @@
-<img style="border-radius: 8px; margin-bottom: 16px; margin-left:auto ;margin-right:auto;display:block;" src="https://i.imgur.com/tq80bux.png" />
+<img style="border-radius: 8px; margin-bottom: 16px; margin-left:auto ;margin-right:auto;display:block;" src="https://i.imgur.com/ammCmgh.png" />
 
 <h2 align="center">Dynamic social images</h2>
 
