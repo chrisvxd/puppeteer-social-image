@@ -20,8 +20,8 @@
   },
   "homepage": "https://github.com/chrisvxd/awesome-social-share#readme",
   "dependencies": {
+    "firebase-admin": "^8.9.1",
     "fts-core": "^1.1.0",
-    "google-auth-library": "^5.4.1",
     "puppeteer-social-image-lambda": "^0.5.0",
     "s3": "^4.4.0",
     "temp-write": "^4.0.0",

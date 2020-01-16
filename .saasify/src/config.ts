@@ -1,5 +1,5 @@
 import s3 from './s3-promise';
-import firestore from './firestore-http';
+import fb from 'firebase-admin';
 
 export const s3Client = s3.createClient({
   maxAsyncS3: 20, // this is the default
@@ -14,4 +14,11 @@ export const s3Client = s3.createClient({
   }
 });
 
-export const db = firestore(JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT));
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+
+fb.initializeApp({
+  credential: fb.credential.cert(serviceAccount),
+  databaseURL: 'https://awesomesocialshare.firebaseio.com'
+});
+
+export const db = fb.firestore();
