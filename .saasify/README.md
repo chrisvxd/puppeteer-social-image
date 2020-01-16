@@ -1,4 +1,31 @@
-# OG IMPACT
+<img style="border-radius: 8px; margin-bottom: 16px; margin-left:auto ;margin-right:auto;display:block;" src="https://i.imgur.com/tq80bux.png" />
+
+<h2 align="center">Dynamic social images</h2>
+
+<p align="center">Dynamic social share images for Facebook, Twitter, Slack etc in a single line of HTML</p>
+
+<p align="center">
+
+```html
+<meta property="og:image" content="https://ogi.sh?title=Hello%20World" />
+```
+
+</p>
+<p align="center">
+<img style="border-radius: 8px; margin-bottom: 16px;" src="https://ssfy.sh/chrisvxd/og-impact@e8cd1a94/image?title=Hello%20World&backgroundImageUrl=https://source.unsplash.com/WLUHO9A_xik" width=400 />
+</p>
+<p align="center">
+  <a href="https://og-impact.saasify.sh">
+    https://og-impact.sh
+  </a>
+</p>
+
+## Features
+
+- **Make social sharing more engaging**: add a dynamic visual to each page.
+- **Custom templates**: built using HTML & CSS.
+- **Perfect for large data sets**: like jobs boards, real estate platforms and more.
+- **Minimal config**: just add an image URL to your page, and let us handle the rest.
 
 ## Quick Start
 
