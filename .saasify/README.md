@@ -1,5 +1,6 @@
 <img src="https://i.imgur.com/ammCmgh.png" />
 
+
 <h2 align="center">Dynamic social images</h2>
 
 <p align="center">Dynamic social share images for Facebook, Twitter, Slack etc in a single line of HTML</p>
@@ -9,8 +10,9 @@
 ```
 
 <p align="center">
-<img style="border-radius: 8px; margin-bottom: 16px;" src="https://ssfy.sh/chrisvxd/og-impact@e8cd1a94/image?title=Hello%20World&backgroundImageUrl=https://source.unsplash.com/WLUHO9A_xik" width=400 />
+<img src="https://ssfy.sh/chrisvxd/og-impact@e8cd1a94/image?title=Hello%20World&backgroundImageUrl=https://source.unsplash.com/WLUHO9A_xik" width=500 />
 </p>
+
 <p align="center">
   <a href="https://og-impact.saasify.sh">
     https://og-impact.sh
@@ -32,7 +34,7 @@ OG IMPACT is highly-cached API for generating dynamic social images, built on to
 
 Welcome to the quick-start! Below are some examples for common ways of dynamically generating an image.
 
-Also be sure to check out the full reference of [API endpoints](https://og-image.saasify.sh/docs#tag/service).
+Also be sure to check out the full reference of [API endpoints](https://og-impact.saasify.sh/docs#tag/service).
 
 ### Generate your first image
 
@@ -50,7 +52,7 @@ Let's start by creating a `<meta />` tag for social sharing using a URL that dyn
 
 > Hint: Try copying the URL out of the `meta` tag to test it.
 
-When your page gets shared, the social platform will read the meta tag and present [the image](https://ssfy.sh/chrisvxd/og-impact@e8cd1a94/image?title=Hello%20World) to the user. Upon receiving the request, OG IMAGE will render the image dynamically based on the query params before caching it.
+When your page gets shared, the social platform will read the meta tag and present [the image](https://ssfy.sh/chrisvxd/og-impact@e8cd1a94/image?title=Hello%20World) to the user. Upon receiving the request, OG IMPACT will render the image dynamically based on the query params before caching it.
 
 This example will render in Facebook and others. For Twitter, add `<meta property="twitter:image" />`. For a full list, see [this reference]().
 
@@ -71,7 +73,7 @@ Nice! You can use anyone of our beautiful [free templates](#free-templates) that
 
 ### Create your own template
 
-> This is a pro feature, so you'll need to [upgrade](https://og-image.saasify.sh/pricing) to access it.
+> This is a pro feature, so you'll need to [upgrade](https://og-impact.saasify.sh/pricing) to access it.
 
 Our templates run on HTML and CSS, so creating your own one as simple as:
 
