@@ -1,6 +1,5 @@
 <img src="https://i.imgur.com/ammCmgh.png" />
 
-
 <h2 align="center">Dynamic social images</h2>
 
 <p align="center">Dynamic social share images for Facebook, Twitter, Slack etc in a single line of HTML</p>
