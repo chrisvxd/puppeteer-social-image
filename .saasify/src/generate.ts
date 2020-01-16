@@ -6,14 +6,12 @@ import reducePairs from './utils/reduce-pairs';
 /**
  * Generate an image with an existing or custom template and save to S3. All remaining params get passed to the handlebars template.
  *
- * @param template - Name of the template. Can include
- * - `basic` - a simple template basic template for rendering text on a background image.
- * - any user template - registered by the `register` API.
+ * @param template - Either a [free](/docs#section/Quick-Start/Free-Templates) or [user template](https://chrisvxd_og-impact_e8cd1a94.saasify.sh/docs#section/Quick-Start/Create-your-own-template) ID
  * @param body - Handlebars template to render in the body for a custom template.
  * @param styles - CSS to use for a custom template. Passed to the head.
  * @param size - Preset size for the image.
  *
- * @return Image as `image/jpeg`
+ * @return Object containing the template URL
  */
 export default async function generate(
   template?: string,

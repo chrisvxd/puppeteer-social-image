@@ -9,10 +9,8 @@ const customTemplates = {};
 /**
  * Render a social share image from a template. All remaining params get passed to the handlebars template.
  *
- * @param template - Name of the template. Can include
- * - `basic` - a simple template basic template for rendering text on a background image.
- * - any user template - registered by the `register` API.
- * @param size - Preset size for the image.
+ * @param template - Either a [free](/docs#section/Quick-Start/Free-Templates) or [user template](https://chrisvxd_og-impact_e8cd1a94.saasify.sh/docs#section/Quick-Start/Create-your-own-template) ID
+ * @param size - Preset size for the image
  *
  * @return Image as `image/jpeg`
  */
