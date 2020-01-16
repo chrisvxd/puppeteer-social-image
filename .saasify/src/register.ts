@@ -1,36 +1,43 @@
 import { db } from './config';
+import shortid from 'shortid';
+
+shortid.seed(7654987); // Random seed to make less predictable
 
 /**
  * Generate an image with an existing or custom template and save to S3.
  *
- * @param template - Name of a prebuilt template.
  * @param body - Handlebars template to render in the body for a custom template.
  * @param styles - CSS to use for a custom template. Passed to the head.
  *
- * @return Image as `image/jpeg`
+ * @return Object containing the template
+ *
  */
 export default async function register(
-  template: string,
   body: string,
   styles: string
 ): Promise<{
   template: string;
-  body: string;
-  styles: string;
 }> {
-  const docRef = db.collection('templates').doc(template);
+  const collectionRef = db.collection('templates');
 
-  // Don't fail if template exists, to allow saasify to execute example every time
-  try {
-    await docRef.set({
-      body,
-      styles
-    });
-  } catch {}
+  let result;
+  let id;
+
+  while (!result) {
+    id = shortid.generate();
+    try {
+      result = await collectionRef.doc(id).set({
+        body,
+        styles
+      });
+
+      console.log(`Created template with id ${id}`);
+    } catch {
+      console.warn(`Template with id ${id} already exists, trying another...`);
+    }
+  }
 
   return {
-    template,
-    body,
-    styles
+    template: id
   };
 }

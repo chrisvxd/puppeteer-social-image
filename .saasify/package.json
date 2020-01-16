@@ -24,6 +24,7 @@
     "fts-core": "^1.1.0",
     "puppeteer-social-image-lambda": "^0.5.0",
     "s3": "^4.4.0",
+    "shortid": "^2.2.15",
     "temp-write": "^4.0.0",
     "uuid": "^3.3.3"
   },
@@ -31,5 +32,7 @@
     "@types/node": "^10.0",
     "@types/puppeteer-core": "^1.9.0"
   },
-  "engines": { "node": "10.x" }
+  "engines": {
+    "node": "10.x"
+  }
 }
