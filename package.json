@@ -46,9 +46,10 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
+    "chrome-aws-lambda": "^2.0.2",
     "handlebars": "^4.1.2",
     "handlebars-jest": "^0.5.0",
-    "puppeteer": "^1.16.0"
+    "puppeteer-core": "^2.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -68,6 +69,7 @@
     "jest-image-snapshot": "^2.8.1",
     "npm-run-all": "^4.1.5",
     "prettier": "~1.16.4",
+    "puppeteer": "^2.0.0",
     "remark-cli": "^6.0.1",
     "remark-lint": "^6.0.4",
     "remark-preset-lint-consistent": "2.0.2",
@@ -83,6 +85,9 @@
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-url": "^1.4.0",
     "tempy": "^0.3.0"
+  },
+  "peerDependencies": {
+    "puppeteer": "2.x"
   },
   "config": {
     "commitizen": {

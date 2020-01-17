@@ -1,10 +1,19 @@
 import "@babel/polyfill";
 import path from "path";
 import templates, { baseTemplate } from "./templates";
+import puppeteerCore from "puppeteer-core";
 
 // Use commonjs to ensure rollup works
 const handlebars = require("handlebars");
-const puppeteer = require("puppeteer");
+
+let puppeteer;
+let chrome;
+
+try {
+  puppeteer = require("puppeteer");
+} catch (err) {
+  chrome = require("chrome-aws-lambda");
+}
 
 const sizeMap = {
   facebook: { width: 1200, height: 630 },
@@ -35,8 +44,15 @@ export default async ({
     .toLowerCase();
   const type = ext === "jpg" || ext === "jpeg" ? "jpeg" : "png";
 
-  // Setup puppeteer
-  const browser = await puppeteer.launch();
+  // Setup puppeteer, using lambda build if local puppeteer not available
+  const browser = puppeteer
+    ? await puppeteer.launch()
+    : await puppeteerCore.launch({
+        args: chrome.args,
+        executablePath: await chrome.executablePath,
+        headless: chrome.headless
+      });
+
   const page = await browser.newPage();
   await page.setViewport({
     width,
