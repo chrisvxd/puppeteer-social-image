@@ -24,12 +24,12 @@ describe("puppeteer-social-image", () => {
       expect(testImage).toMatchImageSnapshot();
     });
 
-    describe("basicTemplate", () => {
-      it("must accept backgroundImageUrl param", async () => {
+    describe("basic Template", () => {
+      it("must accept imageUrl param", async () => {
         await renderSocialImage({
           templateParams: {
             title: "Hello, twitter! @chrisvxd",
-            backgroundImageUrl:
+            imageUrl:
               "https://images.unsplash.com/photo-1557996199-8d219159a1d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=30"
           },
           output: tempPath
@@ -39,6 +39,35 @@ describe("puppeteer-social-image", () => {
 
         expect(testImage).toMatchImageSnapshot();
       });
+
+      it("must accept unsplashId param", async () => {
+        await renderSocialImage({
+          templateParams: {
+            title: "Hello, twitter! @chrisvxd",
+            unsplashId: "2S4FDh3AtGw"
+          },
+          output: tempPath
+        });
+
+        const testImage = fs.readFileSync(tempPath);
+
+        expect(testImage).toMatchImageSnapshot();
+      });
+
+      // Can't test keywords because it uses a random image each time
+      // it("must accept unsplashKeywords param", async () => {
+      //   await renderSocialImage({
+      //     templateParams: {
+      //       title: "Hello, twitter! @chrisvxd",
+      //       unsplashKeywords: "mountains"
+      //     },
+      //     output: tempPath
+      //   });
+
+      //   const testImage = fs.readFileSync(tempPath);
+
+      //   expect(testImage).toMatchImageSnapshot();
+      // });
 
       it("must accept background param", async () => {
         await renderSocialImage({
@@ -101,6 +130,34 @@ describe("puppeteer-social-image", () => {
           templateParams: {
             title: "Hello, twitter! @chrisvxd",
             fontWeight: "400"
+          },
+          output: tempPath
+        });
+
+        const testImage = fs.readFileSync(tempPath);
+
+        expect(testImage).toMatchImageSnapshot();
+      });
+
+      it("must accept watermarkUrl param", async () => {
+        await renderSocialImage({
+          templateParams: {
+            title: "Hello, twitter! @chrisvxd",
+            watermarkUrl: "EXAMPLE.COM"
+          },
+          output: tempPath
+        });
+
+        const testImage = fs.readFileSync(tempPath);
+
+        expect(testImage).toMatchImageSnapshot();
+      });
+
+      it("must accept watermarkText param", async () => {
+        await renderSocialImage({
+          templateParams: {
+            title: "Hello, twitter! @chrisvxd",
+            watermark: "EXAMPLE.COM"
           },
           output: tempPath
         });
