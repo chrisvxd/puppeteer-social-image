@@ -1,9 +1,20 @@
+## [0.2.1](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.2.0...v0.2.1) (2020-01-17)
+
+
+### Bug Fixes
+
+* fix rollup import so we can compile ([d375f6a](https://github.com/chrisvxd/puppeteer-social-image/commit/d375f6a))
+
+
+
 # [0.2.0](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.1.1...v0.2.0) (2020-01-17)
 
 
 ### Features
 
 * add article template ([76be6d3](https://github.com/chrisvxd/puppeteer-social-image/commit/76be6d3))
+* add web API ([ff1143e](https://github.com/chrisvxd/puppeteer-social-image/commit/ff1143e))
+* move .saasify to chrisvxd/og-impact ([6af4da5](https://github.com/chrisvxd/puppeteer-social-image/commit/6af4da5))
 * revamp basic template - unsplash support, tighter line heights and watermarks ([a8010b2](https://github.com/chrisvxd/puppeteer-social-image/commit/a8010b2))
 * support lambda, and make puppeteer a peer dependency ([d21ca5e](https://github.com/chrisvxd/puppeteer-social-image/commit/d21ca5e))
 * switch templates to web font Lato, closest match to Avenir Next ([72e2c1a](https://github.com/chrisvxd/puppeteer-social-image/commit/72e2c1a))

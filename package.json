@@ -1,6 +1,6 @@
 {
   "name": "puppeteer-social-image",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Create dynamic social share images using HTML + CSS via puppeteer.",
   "homepage": "https://github.com/chrisvxd/puppeteer-social-image",
   "license": "MIT",
