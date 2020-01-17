@@ -2,6 +2,12 @@ import fs from "fs";
 import tempy from "tempy";
 import renderSocialImage from "../index";
 
+const snapshotConfig = {
+  failureThreshold: 0.05,
+  failureThresholdType: "percent",
+  dumpDiffToConsole: true
+};
+
 describe("puppeteer-social-image", () => {
   describe("renderSocialImage", () => {
     let tempPath;
@@ -21,7 +27,7 @@ describe("puppeteer-social-image", () => {
 
       const testImage = fs.readFileSync(tempPath);
 
-      expect(testImage).toMatchImageSnapshot();
+      expect(testImage).toMatchImageSnapshot(snapshotConfig);
     });
 
     describe("basic Template", () => {
@@ -37,7 +43,7 @@ describe("puppeteer-social-image", () => {
 
         const testImage = fs.readFileSync(tempPath);
 
-        expect(testImage).toMatchImageSnapshot();
+        expect(testImage).toMatchImageSnapshot(snapshotConfig);
       });
 
       it("must accept unsplashId param", async () => {
@@ -51,7 +57,7 @@ describe("puppeteer-social-image", () => {
 
         const testImage = fs.readFileSync(tempPath);
 
-        expect(testImage).toMatchImageSnapshot();
+        expect(testImage).toMatchImageSnapshot(snapshotConfig);
       });
 
       // Can't test keywords because it uses a random image each time
@@ -66,7 +72,7 @@ describe("puppeteer-social-image", () => {
 
       //   const testImage = fs.readFileSync(tempPath);
 
-      //   expect(testImage).toMatchImageSnapshot();
+      //   expect(testImage).toMatchImageSnapshot(snapshotConfig);
       // });
 
       it("must accept background param", async () => {
@@ -80,7 +86,7 @@ describe("puppeteer-social-image", () => {
 
         const testImage = fs.readFileSync(tempPath);
 
-        expect(testImage).toMatchImageSnapshot();
+        expect(testImage).toMatchImageSnapshot(snapshotConfig);
       });
 
       it("must accept color param", async () => {
@@ -94,7 +100,7 @@ describe("puppeteer-social-image", () => {
 
         const testImage = fs.readFileSync(tempPath);
 
-        expect(testImage).toMatchImageSnapshot();
+        expect(testImage).toMatchImageSnapshot(snapshotConfig);
       });
 
       it("must accept fontFamily param", async () => {
@@ -108,7 +114,7 @@ describe("puppeteer-social-image", () => {
 
         const testImage = fs.readFileSync(tempPath);
 
-        expect(testImage).toMatchImageSnapshot();
+        expect(testImage).toMatchImageSnapshot(snapshotConfig);
       });
 
       it("must accept fontSize param", async () => {
@@ -122,7 +128,7 @@ describe("puppeteer-social-image", () => {
 
         const testImage = fs.readFileSync(tempPath);
 
-        expect(testImage).toMatchImageSnapshot();
+        expect(testImage).toMatchImageSnapshot(snapshotConfig);
       });
 
       it("must accept fontWeight param", async () => {
@@ -136,7 +142,7 @@ describe("puppeteer-social-image", () => {
 
         const testImage = fs.readFileSync(tempPath);
 
-        expect(testImage).toMatchImageSnapshot();
+        expect(testImage).toMatchImageSnapshot(snapshotConfig);
       });
 
       it("must accept watermarkUrl param", async () => {
@@ -150,7 +156,7 @@ describe("puppeteer-social-image", () => {
 
         const testImage = fs.readFileSync(tempPath);
 
-        expect(testImage).toMatchImageSnapshot();
+        expect(testImage).toMatchImageSnapshot(snapshotConfig);
       });
 
       it("must accept watermarkText param", async () => {
@@ -164,7 +170,7 @@ describe("puppeteer-social-image", () => {
 
         const testImage = fs.readFileSync(tempPath);
 
-        expect(testImage).toMatchImageSnapshot();
+        expect(testImage).toMatchImageSnapshot(snapshotConfig);
       });
     });
 
@@ -182,7 +188,7 @@ describe("puppeteer-social-image", () => {
 
         const testImage = fs.readFileSync(tempPath);
 
-        expect(testImage).toMatchImageSnapshot();
+        expect(testImage).toMatchImageSnapshot(snapshotConfig);
       });
 
       it("must accept subtitle", async () => {
@@ -198,7 +204,7 @@ describe("puppeteer-social-image", () => {
 
         const testImage = fs.readFileSync(tempPath);
 
-        expect(testImage).toMatchImageSnapshot();
+        expect(testImage).toMatchImageSnapshot(snapshotConfig);
       });
     });
 
@@ -233,7 +239,7 @@ describe("puppeteer-social-image", () => {
 
       const testImage = fs.readFileSync(tempPath);
 
-      expect(testImage).toMatchImageSnapshot();
+      expect(testImage).toMatchImageSnapshot(snapshotConfig);
     });
 
     it("must generate an image with a custom template when providing multiple custom templates", async () => {
@@ -276,7 +282,7 @@ describe("puppeteer-social-image", () => {
 
       const testImage = fs.readFileSync(tempPath);
 
-      expect(testImage).toMatchImageSnapshot();
+      expect(testImage).toMatchImageSnapshot(snapshotConfig);
     });
   });
 });
