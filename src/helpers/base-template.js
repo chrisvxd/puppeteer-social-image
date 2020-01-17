@@ -1,6 +1,6 @@
 const handlebars = require("handlebars");
 
-export const baseTemplate = handlebars.compile(`
+export default handlebars.compile(`
 <html>
   <head>
     <style>

@@ -1,6 +1,7 @@
 import "@babel/polyfill";
 import path from "path";
-import templates, { baseTemplate } from "./templates";
+import templates from "./templates";
+import { baseTemplate } from "./helpers";
 import puppeteerCore from "puppeteer-core";
 
 // Use commonjs to ensure rollup works
@@ -37,7 +38,7 @@ export default async ({
   const _size = sizeMap[size];
   const { width, height } = _size;
   const customTemplate = customTemplates[template];
-  const buildTemplate = template && templates[template];
+  const createTemplate = template && templates[template];
   const ext = path
     .extname(output)
     .slice(1)
@@ -75,7 +76,7 @@ export default async ({
         styles: customStyles,
         width: size.width
       })
-    : buildTemplate({ templateParams, size: _size });
+    : createTemplate({ templateParams, size: _size });
 
   await page.setContent(html);
 

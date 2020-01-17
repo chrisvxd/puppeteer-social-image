@@ -1,21 +1,10 @@
-import { baseTemplate } from "../base";
-import ImageCss from "./ImageCss.js";
+import baseTemplate from "./base-template";
+import { imageCss, buildUnsplashUrl } from ".";
+
 const handlebars = require("handlebars");
 
-const buildUnsplashUrl = ({ unsplashId, unsplashKeywords, size }) => {
-  const baseUrl = "https://source.unsplash.com";
-  const sizeStr = `${size.width}x${size.height}`;
-
-  if (unsplashId) {
-    return `${baseUrl}/${unsplashId}/${sizeStr}`;
-  } else if (unsplashKeywords) {
-    return `${baseUrl}/${sizeStr}?${unsplashKeywords}`;
-  }
-
-  throw new Error("No ID or keywords specified for unsplash URL");
-};
-
-export const basicTemplate = handlebars.compile(`
+const imageTemplate = body =>
+  handlebars.compile(`
 <div class="Main">
   {{#if backgroundImageUrl}}<div class="Background">
     <div
@@ -24,7 +13,7 @@ export const basicTemplate = handlebars.compile(`
     </div>
   </div>{{/if}}
   <div class="Inner">
-    {{title}}
+    ${body}
   </div>
   {{#if includeWatermark}}
   <div class="Watermark">
@@ -39,9 +28,10 @@ const buildStyles = ({
   backgroundImageUrl,
   color = "white",
   fontFamily = '"Avenir Next", "Lato", "Helvetica Neue", sans-serif',
-  fontSize = "128px",
-  fontWeight = "700"
+  additionalStyles = ""
 } = {}) => `
+${additionalStyles}
+
 .Background {
   position: absolute;
   left: 0;
@@ -51,7 +41,7 @@ const buildStyles = ({
   z-index: -1;
 }
 
-${ImageCss};
+${imageCss};
 
 .Main {
   background: ${backgroundImageUrl ? "transparent" : background};
@@ -62,17 +52,9 @@ ${ImageCss};
 }
 
 .Inner {
-  align-items: center;
   background: ${backgroundImageUrl ? "transparent" : background};
   color: ${color};
-  display: flex;
-  justify-content: center;
   font-family: ${fontFamily};
-  font-size: ${fontSize};
-  font-weight: ${fontWeight};
-  line-height: 1.2;
-  padding: 32px;
-  text-align: center;
   width: 100%;
   height: 100%;
 }
@@ -93,6 +75,8 @@ ${ImageCss};
 `;
 
 export default ({
+  body,
+  styles,
   size,
   templateParams: {
     gradient = true,
@@ -113,16 +97,21 @@ export default ({
   }
 
   return baseTemplate({
-    body: basicTemplate({
+    body: imageTemplate(body)({
       backgroundImageAnchor: "C",
       backgroundImageOverlay: gradient,
       backgroundImageUrl,
+      body,
       includeWatermark:
         templateParams.watermarkUrl || templateParams.watermark || false,
       ...templateParams
     }),
     height: size.height,
-    styles: buildStyles({ backgroundImageUrl, ...templateParams }),
+    styles: buildStyles({
+      backgroundImageUrl,
+      additionalStyles: styles,
+      ...templateParams
+    }),
     width: size.width
   });
 };
