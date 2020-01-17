@@ -3,7 +3,7 @@ import tempy from "tempy";
 import renderSocialImage from "../index";
 
 const snapshotConfig = {
-  failureThreshold: 0.05,
+  failureThreshold: 0.015,
   failureThresholdType: "percent",
   dumpDiffToConsole: true
 };
