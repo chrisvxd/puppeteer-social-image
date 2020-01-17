@@ -168,6 +168,40 @@ describe("puppeteer-social-image", () => {
       });
     });
 
+    describe("article Template", () => {
+      it("must accept expected params", async () => {
+        await renderSocialImage({
+          template: "article",
+          templateParams: {
+            eyebrow: "27 AUGUST / REMOTE",
+            title: "What not to do when remote working",
+            unsplashId: "2S4FDh3AtGw"
+          },
+          output: tempPath
+        });
+
+        const testImage = fs.readFileSync(tempPath);
+
+        expect(testImage).toMatchImageSnapshot();
+      });
+
+      it("must accept subtitle", async () => {
+        await renderSocialImage({
+          template: "article",
+          templateParams: {
+            eyebrow: "27 AUGUST / REMOTE",
+            title: "What not to do when remote working",
+            subtitle: "A simple guide on what to avoid when working at home."
+          },
+          output: tempPath
+        });
+
+        const testImage = fs.readFileSync(tempPath);
+
+        expect(testImage).toMatchImageSnapshot();
+      });
+    });
+
     it("must generate an image with a custom template", async () => {
       const body = `<div class="Main">Hello, {{name}}!</div>`;
 
