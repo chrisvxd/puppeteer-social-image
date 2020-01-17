@@ -27,7 +27,7 @@ const buildStyles = ({
   background = "black",
   backgroundImageUrl,
   color = "white",
-  fontFamily = '"Avenir Next", "Lato", "Helvetica Neue", sans-serif',
+  fontFamily = '"Lato", "Helvetica Neue", sans-serif',
   additionalStyles = ""
 } = {}) => `
 ${additionalStyles}
