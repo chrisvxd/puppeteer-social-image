@@ -2,10 +2,10 @@ import "@babel/polyfill";
 import path from "path";
 import templates from "./templates";
 import { baseTemplate } from "./helpers";
-import puppeteerCore from "puppeteer-core";
 
 // Use commonjs to ensure rollup works
 const handlebars = require("handlebars");
+const puppeteerCore = require("puppeteer-core");
 
 let puppeteer;
 let chrome;
