@@ -3,6 +3,10 @@ import { imageCss, buildUnsplashUrl } from ".";
 
 const handlebars = require("handlebars");
 
+const head = `
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,500,600,700,800,900&display=swap" rel="stylesheet">
+`;
+
 const imageTemplate = body =>
   handlebars.compile(`
 <div class="Main">
@@ -107,6 +111,7 @@ export default ({
       ...templateParams
     }),
     height: size.height,
+    head,
     styles: buildStyles({
       backgroundImageUrl,
       additionalStyles: styles,
