@@ -11,6 +11,12 @@ const sizeMap = {
   twitter: { width: 1200, height: 630 }
 };
 
+let testMode = false;
+
+export const setTestMode = val => {
+  testMode = val;
+};
+
 /**
  * Renders the given HTML as an image via Puppeteer.
  */
@@ -74,7 +80,7 @@ export default async ({
         styles: customStyles,
         width: size.width
       })
-    : createTemplate({ templateParams, size: _size });
+    : createTemplate({ templateParams, size: _size, testMode });
 
   // Wait for fonts to load (via networkidle)
   await page.setContent(html, { waitUntil: "networkidle0" });

@@ -88,7 +88,8 @@ export default ({
     unsplashId,
     unsplashKeywords,
     ...templateParams
-  }
+  },
+  testMode = false
 }) => {
   let backgroundImageUrl;
 
@@ -111,7 +112,7 @@ export default ({
       ...templateParams
     }),
     height: size.height,
-    head,
+    head: testMode ? "" : head,
     styles: buildStyles({
       backgroundImageUrl,
       additionalStyles: styles,

@@ -1,6 +1,6 @@
 import fs from "fs";
 import tempy from "tempy";
-import renderSocialImage from "../index";
+import renderSocialImage, { setTestMode } from "../index";
 import puppeteer from "puppeteer";
 
 const snapshotConfig = {
@@ -8,6 +8,9 @@ const snapshotConfig = {
   failureThresholdType: "percent",
   dumpDiffToConsole: true
 };
+
+// Disable external fonts when testing
+setTestMode(true);
 
 describe("puppeteer-social-image", () => {
   describe("renderSocialImage", () => {
