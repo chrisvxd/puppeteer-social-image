@@ -1,6 +1,7 @@
 import fs from "fs";
 import tempy from "tempy";
 import renderSocialImage from "../index";
+import puppeteer from "puppeteer";
 
 const snapshotConfig = {
   failureThreshold: 0.015,
@@ -28,6 +29,29 @@ describe("puppeteer-social-image", () => {
       const testImage = fs.readFileSync(tempPath);
 
       expect(testImage).toMatchImageSnapshot(snapshotConfig);
+    });
+
+    it("must accept a custom browser instance", async () => {
+      const browser = await puppeteer.launch();
+
+      const spy = jest.spyOn(browser, "newPage");
+
+      await renderSocialImage({
+        templateParams: {
+          title: "Hello, twitter! @chrisvxd"
+        },
+        output: tempPath,
+        size: "facebook",
+        browser
+      });
+
+      const testImage = fs.readFileSync(tempPath);
+
+      expect(spy).toHaveBeenCalled();
+
+      expect(testImage).toMatchImageSnapshot(snapshotConfig);
+
+      await browser.close();
     });
 
     describe("basic Template", () => {

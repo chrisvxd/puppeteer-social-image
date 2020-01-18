@@ -5,16 +5,6 @@ import { baseTemplate } from "./helpers";
 
 // Use commonjs to ensure rollup works
 const handlebars = require("handlebars");
-const puppeteerCore = require("puppeteer-core");
-
-let puppeteer;
-let chrome;
-
-try {
-  puppeteer = require("puppeteer");
-} catch (err) {
-  chrome = require("chrome-aws-lambda");
-}
 
 const sizeMap = {
   facebook: { width: 1200, height: 630 },
@@ -32,7 +22,8 @@ export default async ({
   templateParams = {},
   templateBody,
   templateStyles = "",
-  customTemplates = {}
+  customTemplates = {},
+  browser: userBrowser
 }) => {
   // Resolve preferences
   const _size = sizeMap[size];
@@ -45,14 +36,21 @@ export default async ({
     .toLowerCase();
   const type = ext === "jpg" || ext === "jpeg" ? "jpeg" : "png";
 
-  // Setup puppeteer, using lambda build if local puppeteer not available
-  const browser = puppeteer
-    ? await puppeteer.launch()
-    : await puppeteerCore.launch({
-        args: chrome.args,
-        executablePath: await chrome.executablePath,
-        headless: chrome.headless
-      });
+  let browser = userBrowser;
+
+  if (!userBrowser) {
+    let puppeteer;
+
+    try {
+      puppeteer = require("puppeteer");
+    } catch (err) {
+      throw new Error(
+        "Puppeteer was not installed. Either install puppeteer@^2.0.0 as a peer dependency, or provide the `browser` arg"
+      );
+    }
+
+    browser = await puppeteer.launch();
+  }
 
   const page = await browser.newPage();
   await page.setViewport({
@@ -92,7 +90,9 @@ export default async ({
     quality: type === "jpeg" ? jpegQuality : undefined
   });
 
-  browser.close();
+  if (!userBrowser) {
+    browser.close();
+  }
 
   return screenshot;
 };

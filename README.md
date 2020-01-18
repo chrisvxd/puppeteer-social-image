@@ -69,6 +69,7 @@ Type: function (opts): Promise
 - `opts.size` (string?) Preset size for the image. Valid values are:
   - `facebook`
   - `twitter` (default)
+- `opts.browser` (Browser?) Instance of puppeteer's `Browser` to use instead of the internal version. Useful for serverless functions, which may require [`chrome-aws-lambda`](https://www.npmjs.com/package/chrome-aws-lambda). This browser instance will not be automatically closed.
 
 ## Templates
 

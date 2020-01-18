@@ -46,10 +46,8 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
-    "chrome-aws-lambda": "^2.0.2",
     "handlebars": "^4.1.2",
-    "handlebars-jest": "^0.5.0",
-    "puppeteer-core": "^2.0.0"
+    "handlebars-jest": "^0.5.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
