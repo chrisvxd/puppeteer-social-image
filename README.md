@@ -22,7 +22,7 @@ import renderSocialImage from "puppeteer-social-image";
 renderSocialImage({
   template: "basic",
   templateParams: {
-    backgroundImageUrl:
+    imageUrl:
       "https://images.unsplash.com/photo-1557958114-3d2440207108?w=1950&q=80",
     title: "Hello, world"
   },
@@ -87,7 +87,7 @@ A basic template to show some short text overlaying an image.
 - `unsplashKeywords` (string?) Unsplash keywords to use for the background image
 - `backgroundImageAnchor` (string?, default `"C"`) Anchor point for the background image. Valid options are `C`, `N`, `NE`, `E`, `SE`, `S`, `SW`, `W` or `NW`.
 - `backgroundImageOverlay` (boolean?, default `true`) Add a dark overlay on top of the background image
-- `background` (string?) CSS background prop. Prefer `backgroundImageUrl` if using image.
+- `background` (string?) CSS background prop. Prefer `imageUrl` if using image.
 - `color` (string?, default `"white"`) Color for the title
 - `fontFamily` (string?, default `'"Lato", "Helvetica Neue", sans-serif'`) Font family
 - `fontSize` (string?, default `"128px"`) Font size
@@ -108,7 +108,7 @@ A template for an article, with an eyebrow that can be used for dates
 - `unsplashKeywords` (string?) Unsplash keywords to use for the background image
 - `backgroundImageAnchor` (string?, default `"C"`) Anchor point for the background image. Valid options are `C`, `N`, `NE`, `E`, `SE`, `S`, `SW`, `W` or `NW`.
 - `backgroundImageOverlay` (boolean?, default `true`) Add a dark overlay on top of the background image
-- `background` (string?) CSS background prop. Prefer `backgroundImageUrl` if using image.
+- `background` (string?) CSS background prop. Prefer `imageUrl` if using image.
 - `color` (string?, default `"white"`) Color for the text
 - `fontFamily` (string?, default `'"Lato", "Helvetica Neue", sans-serif'`) Font family
 - `watermark` (string?) Watermark text to render in the bottom right
