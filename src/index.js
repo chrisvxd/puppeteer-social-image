@@ -76,7 +76,8 @@ export default async ({
       })
     : createTemplate({ templateParams, size: _size });
 
-  await page.setContent(html);
+  // Use goto instead of setContent so we can wait for fonts to load (via networkidle)
+  await page.goto("data:text/html," + html, { waitUntil: "networkidle0" });
 
   // Get root of page
   const pageFrame = page.mainFrame();
