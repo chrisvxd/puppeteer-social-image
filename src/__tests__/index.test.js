@@ -242,7 +242,7 @@ describe("puppeteer-social-image", () => {
           color: white;
           display: flex;
           justify-content: center;
-          font-family: "Lato", "Helvetica Neue", sans-serif;
+          font-family: Arial;
           font-size: 128px;
           font-weight: 700;
           padding: 32px;
@@ -276,7 +276,7 @@ describe("puppeteer-social-image", () => {
           color: white;
           display: flex;
           justify-content: center;
-          font-family: "Lato", "Helvetica Neue", sans-serif;
+          font-family: Arial;
           font-size: 128px;
           font-weight: 700;
           padding: 32px;
