@@ -1,3 +1,22 @@
+# [0.3.0](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.2.1...v0.3.0) (2020-01-18)
+
+
+### Bug Fixes
+
+* wait for fonts to load before rendering screenshots ([04502eb](https://github.com/chrisvxd/puppeteer-social-image/commit/04502eb))
+
+
+### Features
+
+* add browser param to allow for external puppeteer configuration ([33cdfdc](https://github.com/chrisvxd/puppeteer-social-image/commit/33cdfdc))
+
+
+### Performance Improvements
+
+* don't include Lato webfont in custom templates ([9ac12ff](https://github.com/chrisvxd/puppeteer-social-image/commit/9ac12ff))
+
+
+
 ## [0.2.1](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.2.0...v0.2.1) (2020-01-17)
 
 
