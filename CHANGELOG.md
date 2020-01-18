@@ -1,3 +1,13 @@
+## [0.3.1](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.3.0...v0.3.1) (2020-01-18)
+
+
+### Bug Fixes
+
+* ensure more complex templates render ([9fea492](https://github.com/chrisvxd/puppeteer-social-image/commit/9fea492))
+* use valid fallback font for image templates ([d1a9dc9](https://github.com/chrisvxd/puppeteer-social-image/commit/d1a9dc9))
+
+
+
 # [0.3.0](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.2.1...v0.3.0) (2020-01-18)
 
 
