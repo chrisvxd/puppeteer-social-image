@@ -1,3 +1,13 @@
+## [0.3.2](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.3.1...v0.3.2) (2020-01-22)
+
+
+### Bug Fixes
+
+* ensure pages are always closed if using userBrowser ([d3bca06](https://github.com/chrisvxd/puppeteer-social-image/commit/d3bca06))
+* ensure puppeteer is always set to headless ([c89653c](https://github.com/chrisvxd/puppeteer-social-image/commit/c89653c))
+
+
+
 ## [0.3.1](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.3.0...v0.3.1) (2020-01-18)
 
 
