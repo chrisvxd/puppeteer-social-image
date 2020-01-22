@@ -101,6 +101,8 @@ export default async ({
 
   if (!userBrowser) {
     browser.close();
+  } else {
+    page.close();
   }
 
   return screenshot;
