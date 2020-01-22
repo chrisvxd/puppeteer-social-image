@@ -55,7 +55,9 @@ export default async ({
       );
     }
 
-    browser = await puppeteer.launch();
+    browser = await puppeteer.launch({
+      headless: true
+    });
   }
 
   const page = await browser.newPage();
