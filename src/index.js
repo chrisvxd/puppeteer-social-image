@@ -1,10 +1,7 @@
 import "@babel/polyfill";
 import path from "path";
 import templates from "./templates";
-import { baseTemplate } from "./helpers";
-
-// Use commonjs to ensure rollup works
-const handlebars = require("handlebars");
+import { compileTemplate } from "./helpers";
 
 const sizeMap = {
   facebook: { width: 1200, height: 630 },
@@ -76,13 +73,16 @@ export default async ({
     (customTemplate && customTemplate.styles) || templateStyles;
 
   const html = usingCustomTemplate
-    ? baseTemplate({
-        body: handlebars.compile(customBody)(templateParams),
-        height: size.height,
+    ? compileTemplate({
+        body: customBody,
         styles: customStyles,
-        width: size.width
+        templateParams: { ...templateParams, testMode },
+        size: _size
       })
-    : createTemplate({ templateParams, size: _size, testMode });
+    : createTemplate({
+        templateParams: { ...templateParams, testMode },
+        size: _size
+      });
 
   // Wait for fonts to load (via networkidle)
   await page.setContent(html, { waitUntil: "networkidle0" });

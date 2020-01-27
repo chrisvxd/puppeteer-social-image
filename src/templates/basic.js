@@ -1,19 +1,14 @@
-import { createImageTemplate } from "../helpers";
+import { compileImageTemplate } from "../helpers";
 
 export default ({
-  templateParams: {
-    title,
-    fontWeight = "700",
-    fontSize = "128px",
-    ...imageTemplateParams
-  },
+  templateParams: { fontWeight = "700", fontSize = "128px", ...templateParams },
   ...params
 }) =>
-  createImageTemplate({
+  compileImageTemplate({
     ...params,
     body: `
       <div class="Content">
-        ${title}
+        {{title}}
       </div>
     `,
     styles: `
@@ -30,5 +25,5 @@ export default ({
         height: 100%;
       }
     `,
-    templateParams: imageTemplateParams
+    templateParams
   });

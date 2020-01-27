@@ -1,17 +1,14 @@
-import { createImageTemplate } from "../helpers";
+import { compileImageTemplate } from "../helpers";
 
-export default ({
-  templateParams: { eyebrow, title, subtitle, ...imageTemplateParams },
-  ...params
-}) =>
-  createImageTemplate({
+export default ({ templateParams, ...params }) =>
+  compileImageTemplate({
     ...params,
     body: `
       <div class="Content">
         <div class="Content-inner">
-          ${eyebrow ? `<div class="Eyebrow">${eyebrow}</div>` : ""}
-          <h1><strong>${title}</strong></h1>
-          ${subtitle ? `<h2>${subtitle}</h2>` : ""}
+          {{#if eyebrow}}<div class="Eyebrow">{{eyebrow}}</div>{{/if}}
+          <h1><strong>{{title}}</strong></h1>
+          {{#if subtitle}}<h2>{{subtitle}}</h2>{{/if}}
           </div>
         </div>
       </div>
@@ -51,5 +48,5 @@ export default ({
         font-size: 40px;
       }
     `,
-    templateParams: imageTemplateParams
+    templateParams
   });

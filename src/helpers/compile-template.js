@@ -1,6 +1,9 @@
+import { resolveBaseParams, resolveParams } from ".";
 const handlebars = require("handlebars");
 
-export default handlebars.compile(`
+export default ({ body, styles, templateParams, size }) =>
+  handlebars.compile(
+    `
 <html>
   <head>
     {{{head}}}
@@ -28,4 +31,9 @@ export default handlebars.compile(`
   </body>
 
 </html>
-`);
+  `
+  )({
+    ...resolveBaseParams(templateParams, size),
+    body: handlebars.compile(body)(resolveParams(templateParams, size)),
+    styles
+  });
