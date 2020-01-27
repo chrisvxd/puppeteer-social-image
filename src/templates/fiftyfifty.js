@@ -17,7 +17,7 @@ export default ({ templateParams, ...params }) =>
       <div class="footer">{{footer}}</div>
   </div>
 
-  {{#if imageUrl}}<div class="image" style="background: url('{{imageUrl}}');" />{{/if}}
+  {{#if imageUrl}}<div class="image" style="background-image: url('{{imageUrl}}');" />{{/if}}
 </div>  
     `,
     styles: `
