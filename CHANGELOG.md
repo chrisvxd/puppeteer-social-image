@@ -1,3 +1,21 @@
+# [0.4.0](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.3.2...v0.4.0) (2020-01-27)
+
+
+### Bug Fixes
+
+* ensure fiftyfifty handles image position correctly ([b99183a](https://github.com/chrisvxd/puppeteer-social-image/commit/b99183a))
+* ensure googleFont param works for all templates, and add tests ([5805a46](https://github.com/chrisvxd/puppeteer-social-image/commit/5805a46))
+* fix aspect ratio of unsplash images in fiftyfifty template ([107a139](https://github.com/chrisvxd/puppeteer-social-image/commit/107a139))
+
+
+### Features
+
+* add fiftyfifty template ([9958a33](https://github.com/chrisvxd/puppeteer-social-image/commit/9958a33))
+* add support for googleFont parameter across all templates ([19332f0](https://github.com/chrisvxd/puppeteer-social-image/commit/19332f0))
+* add support for logging output for debugging ([25f70a3](https://github.com/chrisvxd/puppeteer-social-image/commit/25f70a3))
+
+
+
 ## [0.3.2](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.3.1...v0.3.2) (2020-01-22)
 
 
