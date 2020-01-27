@@ -3,9 +3,26 @@
 import { resolveBaseParams, resolveParams } from ".";
 const handlebars = require("handlebars");
 
-export default ({ body, styles, templateParams, size, compileArgs }) => {
-  const baseParams = resolveBaseParams(templateParams, size, compileArgs);
-  const params = resolveParams(templateParams, size, compileArgs);
+export default ({
+  body,
+  styles,
+  templateParams,
+  size,
+  compileArgs,
+  imageSize
+}) => {
+  const baseParams = resolveBaseParams({
+    templateParams,
+    size,
+    imageSize,
+    compileArgs
+  });
+  const params = resolveParams({
+    templateParams,
+    size,
+    imageSize,
+    compileArgs
+  });
 
   const compiled = handlebars.compile(
     `

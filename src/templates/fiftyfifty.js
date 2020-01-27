@@ -3,6 +3,7 @@ import { compileTemplate } from "../helpers";
 export default ({ templateParams, ...params }) =>
   compileTemplate({
     ...params,
+    imageSize: { height: 700, width: 700 }, // Square - enough for standard width of 610px + 10%
     templateParams,
     body: `
 <div class="social{{#if split}} social--{{split}}-split{{/if}}{{#if logo}} social--has-logo{{/if}}{{#if subtitle}} social--has-subtitle{{/if}}">

@@ -63,13 +63,13 @@ export default ({ body, styles, templateParams, ...params }) =>
       </div>
 `,
     styles: buildStyles(
-      resolveParams(
-        {
+      resolveParams({
+        templateParams: {
           ...templateParams,
           additionalStyles: styles
         },
-        params.size
-      )
+        size: params.size
+      })
     ),
     templateParams: { googleFont: "Lato", ...templateParams },
     ...params

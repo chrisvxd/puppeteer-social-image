@@ -1,15 +1,16 @@
 import { buildUnsplashUrl } from ".";
 
-export default (
-  { unsplashId, unsplashKeywords, googleFont, ...params },
-  size
-) => {
+export default ({
+  templateParams: { unsplashId, unsplashKeywords, googleFont, ...params },
+  size,
+  imageSize = size
+}) => {
   let imageUrl = params.imageUrl;
 
   if (unsplashId) {
-    imageUrl = buildUnsplashUrl({ unsplashId, size });
+    imageUrl = buildUnsplashUrl({ unsplashId, size: imageSize });
   } else if (unsplashKeywords) {
-    imageUrl = buildUnsplashUrl({ unsplashKeywords, size });
+    imageUrl = buildUnsplashUrl({ unsplashKeywords, size: imageSize });
   }
 
   return {

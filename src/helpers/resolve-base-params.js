@@ -1,4 +1,4 @@
-export default (templateParams, size, compileArgs) => {
+export default ({ templateParams, size, compileArgs }) => {
   const {
     fontFamily = templateParams.googleFont
       ? `"${templateParams.googleFont}", Arial`
