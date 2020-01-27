@@ -50,8 +50,6 @@ ${additionalStyles}
 export default ({ body, styles, templateParams, ...params }) =>
   compileTemplate({
     body: `
-      {{#unless testMode}}<link href="https://fonts.googleapis.com/css?family=Lato:400,500,600,700,800,900&display=swap" rel="stylesheet">{{/unless}}
-
       <div class="Main">
         {{#if imageUrl}}
           <div class="Image" style="background-image: {{#if backgroundImageOverlay}}linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%), {{/if}}url('{{imageUrl}}');" />
@@ -76,6 +74,6 @@ export default ({ body, styles, templateParams, ...params }) =>
         params.size
       )
     ),
-    templateParams,
+    templateParams: { ...templateParams, googleFont: "Lato" },
     ...params
   });
