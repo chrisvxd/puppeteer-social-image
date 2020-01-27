@@ -1,5 +1,5 @@
 import baseTemplate from "./base-template";
-import { imageCss, buildUnsplashUrl } from ".";
+import { buildUnsplashUrl } from ".";
 
 const handlebars = require("handlebars");
 
@@ -10,12 +10,10 @@ const head = `
 const imageTemplate = body =>
   handlebars.compile(`
 <div class="Main">
-  {{#if backgroundImageUrl}}<div class="Background">
-    <div
-      class="Image Image--cover Image--anchor{{backgroundImageAnchor}}  {{#if backgroundImageOverlay}}Image--overlay Image--dark{{/if}}">
-      <img class="Image-img" src="{{backgroundImageUrl}}" />
-    </div>
-  </div>{{/if}}
+  {{#if backgroundImageUrl}}
+    <div class="Image" style="background-image: {{#if backgroundImageOverlay}}linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%), {{/if}}url('{{backgroundImageUrl}}');" />
+  {{/if}}
+
   <div class="Inner">
     ${body}
   </div>
@@ -36,23 +34,19 @@ const buildStyles = ({
 } = {}) => `
 ${additionalStyles}
 
-.Background {
-  position: absolute;
-  left: 0;
-  top: 0;
+.Image {
   width: 100%;
   height: 100%;
-  z-index: -1;
+  background-size: cover;  
+  background-repeat: no-repeat;
+  background-origin: center;
 }
-
-${imageCss};
 
 .Main {
   background: ${backgroundImageUrl ? "transparent" : background};
   position: relative;
   width: 100%;
   height: 100%;
-  z-index: -2;
 }
 
 .Inner {
