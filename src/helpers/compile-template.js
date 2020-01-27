@@ -1,8 +1,10 @@
+/* eslint-disable no-console */
+
 import { resolveBaseParams, resolveParams } from ".";
 const handlebars = require("handlebars");
 
-export default ({ body, styles, templateParams, size }) =>
-  handlebars.compile(
+export default ({ body, styles, templateParams, size, compileArgs }) => {
+  const compiled = handlebars.compile(
     `
 <html>
   <head>
@@ -39,7 +41,18 @@ export default ({ body, styles, templateParams, size }) =>
 </html>
   `
   )({
-    ...resolveBaseParams(templateParams, size),
-    body: handlebars.compile(body)(resolveParams(templateParams, size)),
+    ...resolveBaseParams(templateParams, size, compileArgs),
+    body: handlebars.compile(body)(
+      resolveParams(templateParams, size, compileArgs)
+    ),
     styles
   });
+
+  if (compileArgs.log) {
+    console.log("Template Params:", JSON.stringify(templateParams, null, 2));
+    console.log("---");
+    console.log("Compiled Output:", compiled);
+  }
+
+  return compiled;
+};

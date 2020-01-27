@@ -1,4 +1,5 @@
-export default (_, size) => ({
+export default (_, size, compileArgs) => ({
   height: size.height,
-  width: size.width
+  width: size.width,
+  testMode: compileArgs.testMode
 });

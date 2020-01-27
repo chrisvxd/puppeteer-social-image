@@ -26,7 +26,8 @@ export default async ({
   templateBody,
   templateStyles = "",
   customTemplates = {},
-  browser: userBrowser
+  browser: userBrowser,
+  compileArgs = {}
 }) => {
   // Resolve preferences
   const _size = sizeMap[size];
@@ -76,12 +77,14 @@ export default async ({
     ? compileTemplate({
         body: customBody,
         styles: customStyles,
-        templateParams: { ...templateParams, testMode },
-        size: _size
+        templateParams,
+        size: _size,
+        compileArgs: { testMode, ...compileArgs }
       })
     : createTemplate({
-        templateParams: { ...templateParams, testMode },
-        size: _size
+        templateParams,
+        size: _size,
+        compileArgs: { testMode, ...compileArgs }
       });
 
   // Wait for fonts to load (via networkidle)
