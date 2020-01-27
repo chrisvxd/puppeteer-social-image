@@ -4,6 +4,9 @@ import { resolveBaseParams, resolveParams } from ".";
 const handlebars = require("handlebars");
 
 export default ({ body, styles, templateParams, size, compileArgs }) => {
+  const baseParams = resolveBaseParams(templateParams, size, compileArgs);
+  const params = resolveParams(templateParams, size, compileArgs);
+
   const compiled = handlebars.compile(
     `
 <html>
@@ -25,6 +28,7 @@ export default ({ body, styles, templateParams, size, compileArgs }) => {
 
       body {
         background: transparent;
+        {{#if fontFamily}}font-family: {{{fontFamily}}};{{/if}}
         overflow: hidden;
         width: {{width}}px;
         height: {{height}}px;
@@ -41,15 +45,18 @@ export default ({ body, styles, templateParams, size, compileArgs }) => {
 </html>
   `
   )({
-    ...resolveBaseParams(templateParams, size, compileArgs),
-    body: handlebars.compile(body)(
-      resolveParams(templateParams, size, compileArgs)
-    ),
+    ...baseParams,
+    body: handlebars.compile(body)(params),
     styles
   });
 
   if (compileArgs.log) {
-    console.log("Template Params:", JSON.stringify(templateParams, null, 2));
+    console.log(
+      "Unresolved Template Params:",
+      JSON.stringify(templateParams, null, 2)
+    );
+    console.log("Base Template Params:", JSON.stringify(baseParams, null, 2));
+    console.log("Template Params:", JSON.stringify(params, null, 2));
     console.log("---");
     console.log("Compiled Output:", compiled);
   }

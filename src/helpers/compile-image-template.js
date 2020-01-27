@@ -4,7 +4,6 @@ const buildStyles = ({
   background = "black",
   imageUrl,
   color = "white",
-  fontFamily = '"Lato", Arial',
   additionalStyles = ""
 } = {}) => `
 ${additionalStyles}
@@ -27,14 +26,12 @@ ${additionalStyles}
 .Inner {
   background: ${imageUrl ? "transparent" : background};
   color: ${color};
-  font-family: ${fontFamily};
   width: 100%;
   height: 100%;
 }
 
 .Watermark {
   color: white;
-  font-family: ${fontFamily};
   font-size: 24px;
   position: absolute;
   opacity: 0.8;
@@ -74,6 +71,6 @@ export default ({ body, styles, templateParams, ...params }) =>
         params.size
       )
     ),
-    templateParams: { ...templateParams, googleFont: "Lato" },
+    templateParams: { googleFont: "Lato", ...templateParams },
     ...params
   });

@@ -102,6 +102,23 @@ describe("puppeteer-social-image", () => {
       //   expect(testImage).toMatchImageSnapshot(snapshotConfig);
       // });
 
+      it("must accept googleFont param", async () => {
+        await renderSocialImage({
+          templateParams: {
+            title: "Hello, twitter! @chrisvxd",
+            googleFont: "Sigmar One"
+          },
+          output: tempPath,
+          compileArgs: {
+            testMode: false
+          }
+        });
+
+        const testImage = fs.readFileSync(tempPath);
+
+        expect(testImage).toMatchImageSnapshot(snapshotConfig);
+      });
+
       it("must accept background param", async () => {
         await renderSocialImage({
           templateParams: {

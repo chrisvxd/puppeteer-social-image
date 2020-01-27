@@ -1,6 +1,9 @@
 import { buildUnsplashUrl } from ".";
 
-export default ({ unsplashId, unsplashKeywords, ...params }, size) => {
+export default (
+  { unsplashId, unsplashKeywords, googleFont, ...params },
+  size
+) => {
   let imageUrl = params.imageUrl;
 
   if (unsplashId) {
@@ -10,6 +13,7 @@ export default ({ unsplashId, unsplashKeywords, ...params }, size) => {
   }
 
   return {
+    fontFamily: `"${googleFont}", Arial`,
     ...params,
     backgroundImageOverlay:
       typeof params.gradient !== "undefined" ? params.gradient : true,

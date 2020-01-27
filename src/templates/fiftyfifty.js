@@ -29,7 +29,6 @@ export default ({ templateParams, ...params }) =>
 .social {
   display: flex;
   height: 100%;
-  font-family: "Lato", "Helvetica Neue", sans-serif;
 }
 
 .social--diagonal-split .content {
