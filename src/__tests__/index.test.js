@@ -235,6 +235,73 @@ describe("puppeteer-social-image", () => {
       });
     });
 
+    describe("fiftyfifty Template", () => {
+      it("must accept expected params", async () => {
+        await renderSocialImage({
+          template: "fiftyfifty",
+          templateParams: {
+            title: "What not to do when remote working",
+            unsplashId: "2S4FDh3AtGw"
+          },
+          output: tempPath
+        });
+
+        const testImage = fs.readFileSync(tempPath);
+
+        expect(testImage).toMatchImageSnapshot(snapshotConfig);
+      });
+
+      it("must accept split=diagonal param", async () => {
+        await renderSocialImage({
+          template: "fiftyfifty",
+          templateParams: {
+            title: "What not to do when remote working",
+            split: "diagonal",
+            unsplashId: "2S4FDh3AtGw"
+          },
+          output: tempPath
+        });
+
+        const testImage = fs.readFileSync(tempPath);
+
+        expect(testImage).toMatchImageSnapshot(snapshotConfig);
+      });
+      it("must accept split=diagonal-reverse param", async () => {
+        await renderSocialImage({
+          template: "fiftyfifty",
+          templateParams: {
+            title: "What not to do when remote working",
+            split: "diagonal-reverse",
+            unsplashId: "2S4FDh3AtGw"
+          },
+          output: tempPath
+        });
+
+        const testImage = fs.readFileSync(tempPath);
+
+        expect(testImage).toMatchImageSnapshot(snapshotConfig);
+      });
+
+      it("must accept optional params", async () => {
+        await renderSocialImage({
+          template: "fiftyfifty",
+          templateParams: {
+            title: "What not to do when remote working",
+            subtitle: "A simple guide on what to avoid when working at home.",
+            footer: "Test Footer",
+            logo:
+              "data:image/svg+xml;charset=utf-8;base64,PHN2ZyB3aWR0aD0nMjA5NicgaGVpZ2h0PSc0NDAnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PGcgZmlsbD0nbm9uZScgZmlsbC1ydWxlPSdldmVub2RkJz48cmVjdCBmaWxsPScjRkZFNjAwJyB3aWR0aD0nNDQwJyBoZWlnaHQ9JzQ0MCcgcng9JzUyJy8+PGcgdHJhbnNmb3JtPSd0cmFuc2xhdGUoODYgMTQyKSc+PHBhdGggZD0nTTE3Ni4xMzkgOTcuMTVsLTE2LjA5MSA1Mi45MDNTMTU4Ljg2NCAxNTUgMTUzLjY1NSAxNTVoLTE5Ljg4N2MtNi4xNTUgMC03LjU3Ni01LjQxOC03LjU3Ni01LjQxOGwtMjMuNjc1LTc1LjE0NC0yMy42NzUgNzUuMTQ0Uzc3LjQyMiAxNTUgNzEuMjY2IDE1NUg1MC40M2MtNS4yMDggMC02LjM5Mi00Ljk0Ny02LjM5Mi00Ljk0N0wuMjQgNi44MzFDLS40NyA0LjAwNS4yNCAwIDQuNTAyIDBoMjYuMDQzYzcuMTAzIDAgOC41MjMgNC43MTEgOS40NyA3LjUzOGwyMy40MzkgODAuMDkxTDg2LjE4IDcuNTM4Qzg3LjEyOCA0LjI0IDg4Ljc4NSAwIDk0LjIzMSAwaDE2LjU3MmM1LjIwOSAwIDYuODY2IDQuMjQgNy44MTMgNy41MzhsMjIuOTY1IDgwLjA5MSAyMy40MzgtODAuMDkxYy42Mi0yLjQ2NyAxLjk2Mi02LjM3IDcuMDE1LTcuMzIzLjY1LS4xNDIgMS40LS4yMTUgMi4yNjUtLjIxNWg0Ny40NDlDMjU4LjAyIDAgMjc3IDE5LjcyNCAyNzcgNDguNjhjMCAyOS4xNjUtMTkuNDAxIDQ4LjQ3LTU1LjQ2MyA0OC40N0gxNzYuMTR6bTQ0LjcyLTMwLjY0NWMxNS4zNzIgMCAyMi4wNzMtOC40MzEgMjIuMDczLTE4LjIzNSAwLTEwLjE5Ny02LjctMTguNDMyLTIyLjA3Mi0xOC40MzJoLTIzLjQ0M2wtMTEuMTcyIDM2LjY2N2gzNC42MTV6JyBmaWxsLW9wYWNpdHk9Jy44NycgZmlsbD0nIzAwMCcvPjxjaXJjbGUgZmlsbD0nIzIxMUQwMCcgY3g9JzI2MycgY3k9JzE0MScgcj0nMTQnLz48L2c+PHRleHQgZm9udC1mYW1pbHk9J0F2ZW5pck5leHQtRGVtaUJvbGQsIEF2ZW5pciBOZXh0JyBmb250LXNpemU9JzIxMCcgZm9udC13ZWlnaHQ9JzUwMCcgbGV0dGVyLXNwYWNpbmc9JzE3LjIxMycgZmlsbD0nIzIxMUQwMCc+PHRzcGFuIHg9JzU2MCcgeT0nMjk3Jz5XRUxMUEFJRC5JTzwvdHNwYW4+PC90ZXh0PjwvZz48L3N2Zz4=",
+            unsplashId: "2S4FDh3AtGw"
+          },
+          output: tempPath
+        });
+
+        const testImage = fs.readFileSync(tempPath);
+
+        expect(testImage).toMatchImageSnapshot(snapshotConfig);
+      });
+    });
+
     it("must generate an image with a custom template", async () => {
       const body = `<div class="Main">Hello, {{name}}!</div>`;
 
