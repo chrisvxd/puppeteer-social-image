@@ -283,12 +283,30 @@ describe("puppeteer-social-image", () => {
 
         expect(testImage).toMatchImageSnapshot(snapshotConfig);
       });
+
       it("must accept split=diagonal-reverse param", async () => {
         await renderSocialImage({
           template: "fiftyfifty",
           templateParams: {
             title: "What not to do when remote working",
             split: "diagonal-reverse",
+            unsplashId: "2S4FDh3AtGw"
+          },
+          output: tempPath
+        });
+
+        const testImage = fs.readFileSync(tempPath);
+
+        expect(testImage).toMatchImageSnapshot(snapshotConfig);
+      });
+
+      it("must prefer watermark to footer", async () => {
+        await renderSocialImage({
+          template: "fiftyfifty",
+          templateParams: {
+            title: "What not to do when remote working",
+            footer: "Test Footer",
+            watermark: "Test Watermark",
             unsplashId: "2S4FDh3AtGw"
           },
           output: tempPath
