@@ -96,25 +96,24 @@ export default async ({
   const pageFrame = page.mainFrame();
   const rootHandle = await pageFrame.$("body > *");
 
-  // Take screenshot
-  let screenshot = await rootHandle.screenshot({
-    path: output,
-    omitBackground: true,
-    type,
-    quality: type === "jpeg" ? jpegQuality : undefined
-  });
+  let screenshot;
 
-  if (preview) {
-    console.info("Generating preview...");
-
+  if (!preview) {
+    // Take screenshot
+    screenshot = await rootHandle.screenshot({
+      path: output,
+      omitBackground: true,
+      type,
+      quality: type === "jpeg" ? jpegQuality : undefined
+    });
+  } else {
     await page.setViewport({
       // Just needs to be larger than preview, so we can deal with any environmental rendering nuances and crop cleanly
-      width: 1000,
-      height: 1000,
-      deviceScaleFactor: 2
+      width: 1250,
+      height: 1250
     });
 
-    const previewHtml = compilePreview({ image: screenshot, compileArgs });
+    const previewHtml = compilePreview({ body: html, compileArgs });
     await page.setContent(previewHtml, { waitUntil: "networkidle0" });
 
     // Get root of page

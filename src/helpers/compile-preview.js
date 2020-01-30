@@ -2,10 +2,7 @@
 
 const handlebars = require("handlebars");
 
-export default ({ image, compileArgs }) => {
-  const b64 = image.toString("base64");
-  const dataUri = "data:image/jpeg;base64," + b64;
-
+export default ({ body, compileArgs }) => {
   const compiled = handlebars.compile(
     `
 <html>
@@ -21,6 +18,7 @@ export default ({ image, compileArgs }) => {
         background: transparent;
         overflow: hidden;
         height: 100%;
+        font-size: 2.37em; /* Approximately 1200 / 507 (target size) */
       }
 
       {{{styles}}}
@@ -28,12 +26,13 @@ export default ({ image, compileArgs }) => {
   </head>
 
   <body>
-    <div style="background: white; border-radius: 8px; border-width: 1px; border-style: solid; border-color: #CCD6DD; color: black; width: 509px; font-family: Arial;">
-      <div style="border-top-left-radius: 7px; border-top-right-radius: 7px; width: 100%; height: 266px; overflow: hidden; background-size: cover; background-repeat: no-repeat; background-image: url('{{dataUri}}');">
+    <div style="background: white; border-radius: 8px; border-width: 1px; border-style: solid; border-color: #CCD6DD; color: black; font-family: Arial;">
+      <div style="border-top-left-radius: 16.59px; border-top-right-radius: 16.59px; width: 100%; height: 630px; width: 1200px; overflow: hidden;">
+        {{{body}}}
       </div>
-      <div style="border-top-width: 1px; border-top-style: solid; border-top-color: #CCD6DD; padding: 8px;">
-        <div style="margin-bottom: 4;">Web page</div>
-        <div style="color: rgb(101, 119, 134); margin-bottom: 4px;">
+      <div style="border-top-width: 1px; border-top-style: solid; border-top-color: #CCD6DD; padding: 18.97px;">
+        <div style="margin-bottom: 9.48px;">Web page</div>
+        <div style="color: rgb(101, 119, 134); margin-bottom: 9.48px;">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </div>
@@ -45,7 +44,7 @@ export default ({ image, compileArgs }) => {
 </html>
   `
   )({
-    dataUri
+    body
   });
 
   if (compileArgs.log) {
