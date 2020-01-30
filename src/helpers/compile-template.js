@@ -24,6 +24,8 @@ export default ({
     compileArgs
   });
 
+  const compiledBody = handlebars.compile(body)(params);
+
   const compiled = handlebars.compile(
     `
 <html>
@@ -63,7 +65,7 @@ export default ({
   `
   )({
     ...baseParams,
-    body: handlebars.compile(body)(params),
+    body: compiledBody,
     styles
   });
 
@@ -78,5 +80,9 @@ export default ({
     console.log("Compiled Output:", compiled);
   }
 
-  return compiled;
+  return {
+    html: compiled,
+    body: compiledBody,
+    styles
+  };
 };

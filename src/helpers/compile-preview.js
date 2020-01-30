@@ -2,12 +2,14 @@
 
 const handlebars = require("handlebars");
 
-export default ({ body, compileArgs }) => {
+export default ({ body, styles, params, compileArgs }) => {
   const compiled = handlebars.compile(
     `
 <html>
   <head>
     <style>
+      {{{styles}}}
+
       * {
         box-sizing: border-box;
         margin: 0;
@@ -18,10 +20,7 @@ export default ({ body, compileArgs }) => {
         background: transparent;
         overflow: hidden;
         height: 100%;
-        font-size: 2.37em; /* Approximately 1200 / 507 (target size) */
       }
-
-      {{{styles}}}
     </style>
   </head>
 
@@ -44,7 +43,8 @@ export default ({ body, compileArgs }) => {
 </html>
   `
   )({
-    body
+    body: handlebars.compile(body)(params),
+    styles
   });
 
   if (compileArgs.log) {

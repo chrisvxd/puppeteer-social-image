@@ -75,7 +75,7 @@ export default async ({
   const customStyles =
     (customTemplate && customTemplate.styles) || templateStyles;
 
-  const html = usingCustomTemplate
+  const { html, body, styles } = usingCustomTemplate
     ? compileTemplate({
         body: customBody,
         styles: customStyles,
@@ -113,7 +113,7 @@ export default async ({
       height: 1250
     });
 
-    const previewHtml = compilePreview({ body: html, compileArgs });
+    const previewHtml = compilePreview({ body, styles, compileArgs });
     await page.setContent(previewHtml, { waitUntil: "networkidle0" });
 
     // Get root of page
