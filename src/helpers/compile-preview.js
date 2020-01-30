@@ -25,11 +25,11 @@ export default ({ body, styles, params, compileArgs }) => {
   </head>
 
   <body>
-    <div style="background: white; border-radius: 8px; border-width: 1px; border-style: solid; border-color: #CCD6DD; color: black; font-family: Arial;">
-      <div style="border-top-left-radius: 16.59px; border-top-right-radius: 16.59px; width: 100%; height: 630px; width: 1200px; overflow: hidden;">
+    <div style="background: white; border-radius: 19px; border-width: 2px; border-style: solid; border-color: #CCD6DD; color: black; font-family: Arial; width: 1205px;">
+      <div style="border-top-left-radius: 17px; border-top-right-radius: 17px; width: 100%; height: 630px; width: 1200px; overflow: hidden;">
         {{{body}}}
       </div>
-      <div style="border-top-width: 1px; border-top-style: solid; border-top-color: #CCD6DD; padding: 18.97px;">
+      <div style="border-top-width: 2px; border-top-style: solid; border-top-color: #CCD6DD; padding: 18.97px; font-size: 2.37em;">
         <div style="margin-bottom: 9.48px;">Web page</div>
         <div style="color: rgb(101, 119, 134); margin-bottom: 9.48px;">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
