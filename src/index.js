@@ -94,7 +94,7 @@ export default async ({
 
   // Get root of page
   const pageFrame = page.mainFrame();
-  const rootHandle = await pageFrame.$("body");
+  const rootHandle = await pageFrame.$("body > *");
 
   // Take screenshot
   let screenshot = await rootHandle.screenshot({
@@ -108,8 +108,9 @@ export default async ({
     console.info("Generating preview...");
 
     await page.setViewport({
-      width: 509,
-      height: 365,
+      // Just needs to be larger than preview, so we can deal with any environmental rendering nuances and crop cleanly
+      width: 1000,
+      height: 1000,
       deviceScaleFactor: 2
     });
 
@@ -118,7 +119,7 @@ export default async ({
 
     // Get root of page
     const pageFrame = page.mainFrame();
-    const rootHandle = await pageFrame.$("body");
+    const rootHandle = await pageFrame.$("body > *");
 
     // Take screenshot
     screenshot = await rootHandle.screenshot({

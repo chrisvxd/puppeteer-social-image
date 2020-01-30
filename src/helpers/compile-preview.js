@@ -28,7 +28,7 @@ export default ({ image, compileArgs }) => {
   </head>
 
   <body>
-    <div style="background: white; border-radius: 8px; border-width: 1px; border-style: solid; border-color: #CCD6DD; color: black; width: 509px; font-family: sans-serif;">
+    <div style="background: white; border-radius: 8px; border-width: 1px; border-style: solid; border-color: #CCD6DD; color: black; width: 509px; font-family: Arial;">
       <div style="border-top-left-radius: 7px; border-top-right-radius: 7px; width: 100%; height: 266px; overflow: hidden; background-size: cover; background-repeat: no-repeat; background-image: url('{{dataUri}}');">
       </div>
       <div style="border-top-width: 1px; border-top-style: solid; border-top-color: #CCD6DD; padding: 8px;">
