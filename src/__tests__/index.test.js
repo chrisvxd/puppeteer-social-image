@@ -57,6 +57,21 @@ describe("puppeteer-social-image", () => {
       await browser.close();
     });
 
+    it("must generate a preview image as expected", async () => {
+      await renderSocialImage({
+        templateParams: {
+          title: "Hello, twitter! @chrisvxd"
+        },
+        output: tempPath,
+        size: "facebook",
+        preview: true
+      });
+
+      const testImage = fs.readFileSync(tempPath);
+
+      expect(testImage).toMatchImageSnapshot(snapshotConfig);
+    });
+
     describe("basic Template", () => {
       it("must accept imageUrl param", async () => {
         await renderSocialImage({

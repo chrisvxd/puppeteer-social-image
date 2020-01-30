@@ -2,6 +2,7 @@ import "@babel/polyfill";
 import path from "path";
 import templates from "./templates";
 import { compileTemplate } from "./helpers";
+import compilePreview from "./helpers/compile-preview";
 
 const sizeMap = {
   facebook: { width: 1200, height: 630 },
@@ -27,6 +28,7 @@ export default async ({
   templateStyles = "",
   customTemplates = {},
   browser: userBrowser,
+  preview = false,
   compileArgs = {}
 }) => {
   // Resolve preferences
@@ -95,12 +97,37 @@ export default async ({
   const rootHandle = await pageFrame.$("body");
 
   // Take screenshot
-  const screenshot = await rootHandle.screenshot({
+  let screenshot = await rootHandle.screenshot({
     path: output,
     omitBackground: true,
     type,
     quality: type === "jpeg" ? jpegQuality : undefined
   });
+
+  if (preview) {
+    console.info("Generating preview...");
+
+    await page.setViewport({
+      width: 509,
+      height: 365,
+      deviceScaleFactor: 2
+    });
+
+    const previewHtml = compilePreview({ image: screenshot, compileArgs });
+    await page.setContent(previewHtml, { waitUntil: "networkidle0" });
+
+    // Get root of page
+    const pageFrame = page.mainFrame();
+    const rootHandle = await pageFrame.$("body");
+
+    // Take screenshot
+    screenshot = await rootHandle.screenshot({
+      path: output,
+      omitBackground: true,
+      type,
+      quality: type === "jpeg" ? jpegQuality : undefined
+    });
+  }
 
   if (!userBrowser) {
     browser.close();
