@@ -1,3 +1,14 @@
+## [0.5.3](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.5.2...v0.5.3) (2020-01-30)
+
+
+### Bug Fixes
+
+* fix invalid markup in all templates ([9ac863f](https://github.com/chrisvxd/puppeteer-social-image/commit/9ac863f))
+* further fixes to image templates ([fe507f3](https://github.com/chrisvxd/puppeteer-social-image/commit/fe507f3))
+* slight visual tweak to previews ([2096d6b](https://github.com/chrisvxd/puppeteer-social-image/commit/2096d6b))
+
+
+
 ## [0.5.2](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.5.1...v0.5.2) (2020-01-30)
 
 
