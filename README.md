@@ -132,6 +132,7 @@ A multiuse template for an array of content
 - `subtitle` (string?) Subtitle text
 - `footer` (string) Footer text
 - `split` (`straight` | `diagonal` | `diagonal-reverse`, default `straight`) Style of split between content and image
+- `logoUrl` (string?) URL for the logo image
 - `imageUrl` (string?) URL for the background image
 - `unsplashId` (string?) Unsplash ID for the background image
 - `unsplashKeywords` (string?) Unsplash keywords to use for the background image
