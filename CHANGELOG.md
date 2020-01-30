@@ -1,3 +1,18 @@
+## [0.5.2](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.5.1...v0.5.2) (2020-01-30)
+
+
+### Bug Fixes
+
+* don't nest <html /> tags in preview, and render styles correctly ([749d5f3](https://github.com/chrisvxd/puppeteer-social-image/commit/749d5f3))
+* tidy up borders in preview ([8e3bb6f](https://github.com/chrisvxd/puppeteer-social-image/commit/8e3bb6f))
+
+
+### Performance Improvements
+
+* slightly increase preview performance by avoiding calling setContent twice ([cb88485](https://github.com/chrisvxd/puppeteer-social-image/commit/cb88485))
+
+
+
 ## [0.5.1](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.5.0...v0.5.1) (2020-01-30)
 
 
