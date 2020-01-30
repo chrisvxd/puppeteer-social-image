@@ -89,16 +89,16 @@ export default async ({
         compileArgs: { testMode, ...compileArgs }
       });
 
-  // Wait for fonts to load (via networkidle)
-  await page.setContent(html, { waitUntil: "networkidle0" });
-
-  // Get root of page
-  const pageFrame = page.mainFrame();
-  const rootHandle = await pageFrame.$("body > *");
-
   let screenshot;
 
   if (!preview) {
+    // Wait for fonts to load (via networkidle)
+    await page.setContent(html, { waitUntil: "networkidle0" });
+
+    // Get root of page
+    const pageFrame = page.mainFrame();
+    const rootHandle = await pageFrame.$("body > *");
+
     // Take screenshot
     screenshot = await rootHandle.screenshot({
       path: output,
