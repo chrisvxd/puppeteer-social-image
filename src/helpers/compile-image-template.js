@@ -49,7 +49,7 @@ export default ({ body, styles, templateParams, ...params }) =>
     body: `
       <div class="Main">
         {{#if imageUrl}}
-          <div class="Image" style="background-image: {{#if backgroundImageOverlay}}linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%), {{/if}}url('{{imageUrl}}');" />
+          <div class="Image" style="background-image: {{#if backgroundImageOverlay}}linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%), {{/if}}url('{{imageUrl}}');"></div>
         {{/if}}
 
         <div class="Inner">

@@ -1,4 +1,4 @@
-import { compileTemplate } from '../helpers';
+import { compileTemplate } from "../helpers";
 
 export default ({ templateParams, ...params }) =>
   compileTemplate({
@@ -22,7 +22,7 @@ export default ({ templateParams, ...params }) =>
       </div>
   </div>
 
-  {{#if imageUrl}}<div class="image" style="background-image: url('{{imageUrl}}');" />{{/if}}
+  {{#if imageUrl}}<div class="image" style="background-image: url('{{imageUrl}}');"></div>{{/if}}
 </div>  
     `,
     styles: `
