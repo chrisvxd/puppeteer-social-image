@@ -1,3 +1,17 @@
+## [0.5.1](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.5.0...v0.5.1) (2020-01-30)
+
+
+### Bug Fixes
+
+* ensure images and previews get cropped correctly ([1f894cf](https://github.com/chrisvxd/puppeteer-social-image/commit/1f894cf))
+
+
+### Performance Improvements
+
+* increase preview performance by 2x by only taking 1 screenshot ([72431de](https://github.com/chrisvxd/puppeteer-social-image/commit/72431de))
+
+
+
 # [0.5.0](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.4.1...v0.5.0) (2020-01-30)
 
 
