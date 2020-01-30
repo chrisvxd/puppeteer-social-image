@@ -1,3 +1,12 @@
+## [0.5.4](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.5.3...v0.5.4) (2020-01-30)
+
+
+### Bug Fixes
+
+* fix invalid markup in article template, and add regression tests ([f7ef694](https://github.com/chrisvxd/puppeteer-social-image/commit/f7ef694))
+
+
+
 ## [0.5.3](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.5.2...v0.5.3) (2020-01-30)
 
 
