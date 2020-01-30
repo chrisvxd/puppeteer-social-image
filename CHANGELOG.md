@@ -1,3 +1,12 @@
+# [0.5.0](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.4.1...v0.5.0) (2020-01-30)
+
+
+### Features
+
+* add support for generating previews wrapped in Twitter-style frame ([231c0db](https://github.com/chrisvxd/puppeteer-social-image/commit/231c0db))
+
+
+
 ## [0.4.1](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.4.0...v0.4.1) (2020-01-27)
 
 
