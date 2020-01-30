@@ -26,7 +26,7 @@ export default ({ body, styles, params, compileArgs }) => {
 
   <body>
     <div style="background: white; border-radius: 19px; border-width: 2px; border-style: solid; border-color: #CCD6DD; color: black; font-family: Arial; width: 1205px;">
-      <div style="border-top-left-radius: 17px; border-top-right-radius: 17px; width: 100%; height: 630px; width: 1200px; overflow: hidden;">
+      <div style="border-top-left-radius: 17px; border-top-right-radius: 17px; width: 100%; height: 630px; overflow: hidden; position: relative;">
         {{{body}}}
       </div>
       <div style="border-top-width: 2px; border-top-style: solid; border-top-color: #CCD6DD; padding: 18.97px; font-size: 2.37em;">
