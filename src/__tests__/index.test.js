@@ -57,21 +57,6 @@ describe("puppeteer-social-image", () => {
       await browser.close();
     });
 
-    it("must generate a preview image as expected", async () => {
-      await renderSocialImage({
-        templateParams: {
-          title: "Hello, twitter! @chrisvxd"
-        },
-        output: tempPath,
-        size: "facebook",
-        preview: true
-      });
-
-      const testImage = fs.readFileSync(tempPath);
-
-      expect(testImage).toMatchImageSnapshot(snapshotConfig);
-    });
-
     describe("basic Template", () => {
       it("must accept imageUrl param", async () => {
         await renderSocialImage({
@@ -231,6 +216,21 @@ describe("puppeteer-social-image", () => {
 
         expect(testImage).toMatchImageSnapshot(snapshotConfig);
       });
+
+      it("must generate as a preview image as expected", async () => {
+        await renderSocialImage({
+          templateParams: {
+            title: "Hello, twitter! @chrisvxd"
+          },
+          output: tempPath,
+          size: "facebook",
+          preview: true
+        });
+
+        const testImage = fs.readFileSync(tempPath);
+
+        expect(testImage).toMatchImageSnapshot(snapshotConfig);
+      });
     });
 
     describe("article Template", () => {
@@ -259,6 +259,24 @@ describe("puppeteer-social-image", () => {
             subtitle: "A simple guide on what to avoid when working at home."
           },
           output: tempPath
+        });
+
+        const testImage = fs.readFileSync(tempPath);
+
+        expect(testImage).toMatchImageSnapshot(snapshotConfig);
+      });
+
+      it("must generate as a preview image as expected", async () => {
+        await renderSocialImage({
+          template: "article",
+          templateParams: {
+            eyebrow: "27 AUGUST / REMOTE",
+            title: "What not to do when remote working",
+            unsplashId: "2S4FDh3AtGw"
+          },
+          output: tempPath,
+          size: "facebook",
+          preview: true
         });
 
         const testImage = fs.readFileSync(tempPath);
@@ -344,6 +362,23 @@ describe("puppeteer-social-image", () => {
             unsplashId: "2S4FDh3AtGw"
           },
           output: tempPath
+        });
+
+        const testImage = fs.readFileSync(tempPath);
+
+        expect(testImage).toMatchImageSnapshot(snapshotConfig);
+      });
+
+      it("must generate as a preview image as expected", async () => {
+        await renderSocialImage({
+          template: "fiftyfifty",
+          templateParams: {
+            title: "What not to do when remote working",
+            unsplashId: "2S4FDh3AtGw"
+          },
+          output: tempPath,
+          size: "facebook",
+          preview: true
         });
 
         const testImage = fs.readFileSync(tempPath);

@@ -9,7 +9,6 @@ export default ({ templateParams, ...params }) =>
           {{#if eyebrow}}<div class="Eyebrow">{{eyebrow}}</div>{{/if}}
           <h1><strong>{{title}}</strong></h1>
           {{#if subtitle}}<h2>{{subtitle}}</h2>{{/if}}
-          </div>
         </div>
       </div>
     `,
