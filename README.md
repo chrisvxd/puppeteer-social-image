@@ -70,6 +70,7 @@ Type: function (opts): Promise
   - `facebook`
   - `twitter` (default)
 - `opts.browser` (Browser?) Instance of puppeteer's `Browser` to use instead of the internal version. Useful for serverless functions, which may require [`chrome-aws-lambda`](https://www.npmjs.com/package/chrome-aws-lambda). This browser instance will not be automatically closed.
+- `opts.preview` (boolean?) Render the image with a chrome, as it would look on Twitter
 
 ## Templates
 
