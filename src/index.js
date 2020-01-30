@@ -97,7 +97,7 @@ export default async ({
 
     // Get root of page
     const pageFrame = page.mainFrame();
-    const rootHandle = await pageFrame.$("body > *");
+    const rootHandle = await pageFrame.$("body");
 
     // Take screenshot
     screenshot = await rootHandle.screenshot({
