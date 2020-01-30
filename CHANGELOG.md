@@ -1,3 +1,12 @@
+## [0.5.5](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.5.4...v0.5.5) (2020-01-30)
+
+
+### Bug Fixes
+
+* ensure custom templates generate in all environments ([49d084a](https://github.com/chrisvxd/puppeteer-social-image/commit/49d084a))
+
+
+
 ## [0.5.4](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.5.3...v0.5.4) (2020-01-30)
 
 
