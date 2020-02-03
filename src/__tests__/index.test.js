@@ -189,11 +189,11 @@ describe("puppeteer-social-image", () => {
         expect(testImage).toMatchImageSnapshot(snapshotConfig);
       });
 
-      it("must accept watermarkUrl param", async () => {
+      it("must accept logo param", async () => {
         await renderSocialImage({
           templateParams: {
             title: "Hello, twitter! @chrisvxd",
-            watermarkUrl: "EXAMPLE.COM"
+            logo: "https://i.imgur.com/L5ujMCQ.png"
           },
           output: tempPath
         });
@@ -203,11 +203,26 @@ describe("puppeteer-social-image", () => {
         expect(testImage).toMatchImageSnapshot(snapshotConfig);
       });
 
-      it("must accept watermarkText param", async () => {
+      it("must accept watermark param", async () => {
         await renderSocialImage({
           templateParams: {
             title: "Hello, twitter! @chrisvxd",
-            watermark: "EXAMPLE.COM"
+            watermark: "example.com"
+          },
+          output: tempPath
+        });
+
+        const testImage = fs.readFileSync(tempPath);
+
+        expect(testImage).toMatchImageSnapshot(snapshotConfig);
+      });
+
+      it("must accept logo and watermark param", async () => {
+        await renderSocialImage({
+          templateParams: {
+            title: "Hello, twitter! @chrisvxd",
+            watermark: "example.com",
+            logo: "https://i.imgur.com/L5ujMCQ.png"
           },
           output: tempPath
         });
@@ -240,8 +255,12 @@ describe("puppeteer-social-image", () => {
           templateParams: {
             eyebrow: "27 AUGUST / REMOTE",
             title: "What not to do when remote working",
-            unsplashId: "2S4FDh3AtGw"
+            unsplashId: "2S4FDh3AtGw",
+            watermark: "example.com",
+            logo: "https://i.imgur.com/L5ujMCQ.png"
           },
+          size: "facebook",
+
           output: tempPath
         });
 
