@@ -1,3 +1,12 @@
+# [0.6.0](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.5.5...v0.6.0) (2020-02-03)
+
+
+### Features
+
+* add logo and refined watermark to basic and article templates. Reduce font size. ([2539a79](https://github.com/chrisvxd/puppeteer-social-image/commit/2539a79))
+
+
+
 ## [0.5.5](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.5.4...v0.5.5) (2020-01-30)
 
 
