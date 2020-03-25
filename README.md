@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.com/chrisvxd/puppeteer-social-image.svg?branch=master)](https://travis-ci.com/chrisvxd/puppeteer-social-image) [![NPM](https://img.shields.io/npm/v/puppeteer-social-image.svg)](https://www.npmjs.com/package/puppeteer-social-image) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-prettier-brightgreen.svg)](https://prettier.io)
 
-Create dynamic social share images using HTML + CSS via puppeteer. For a hosted version, see [OGIMPACT](https://github.com/chrisvxd/og-impact/blob/master/README.md).
+Create dynamic social share images using HTML + CSS via puppeteer. For a hosted version, see [OGIMPACT](https://github.com/chrisvxd/og-impact).
 
 ![img](https://i.ibb.co/PwVm1ky/Artboard.png)
 
