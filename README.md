@@ -47,6 +47,27 @@ renderSocialImage({
 });
 ```
 
+### Render on a serverless function
+
+Add the [`puppeteer-serverless` package](https://github.com/saasify-sh/puppeteer-serverless), and pass it to the render function via the `browser` option:
+
+```js
+import puppeteer from 'puppeteer-serverless';
+import renderSocialImage from 'puppeteer-social-image';
+
+export default async () => {
+  await renderSocialImage({
+    template: "basic",
+    templateParams: {
+      imageUrl:
+        "https://images.unsplash.com/photo-1557958114-3d2440207108?w=1950&q=80",
+      title: "Hello, world"
+    },
+    browser:  await puppeteer.launch({})
+  });
+}
+```
+
 ## API
 
 ### renderSocialImage
