@@ -106,7 +106,9 @@ export default async ({
 
   let screenshot;
 
-  if (!preview) {
+  const validPreviewSizes = ["facebook", "twitter"];
+
+  if (!preview || validPreviewSizes.indexOf(size) === -1) {
     // Wait for fonts to load (via networkidle)
     await page.setContent(html, { waitUntil: "networkidle0" });
 

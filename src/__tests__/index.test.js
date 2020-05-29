@@ -260,6 +260,21 @@ describe("puppeteer-social-image", () => {
 
         expect(testImage).toMatchImageSnapshot(snapshotConfig);
       });
+
+      it("must not generate as a preview image when using an invalid preview size", async () => {
+        await renderSocialImage({
+          templateParams: {
+            title: "Hello, twitter! @chrisvxd"
+          },
+          output: tempPath,
+          size: "ig-story",
+          preview: true
+        });
+
+        const testImage = fs.readFileSync(tempPath);
+
+        expect(testImage).toMatchImageSnapshot(snapshotConfig);
+      });
     });
 
     describe("article Template", () => {
