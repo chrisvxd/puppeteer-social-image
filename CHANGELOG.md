@@ -1,3 +1,15 @@
+# [0.7.0](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.6.0...v0.7.0) (2020-05-29)
+
+
+### Features
+
+* add instagram sizes ([d2b5797](https://github.com/chrisvxd/puppeteer-social-image/commit/d2b5797))
+* add pinterest size ([d3c652c](https://github.com/chrisvxd/puppeteer-social-image/commit/d3c652c))
+* pass size param to custom templates ([400b1ec](https://github.com/chrisvxd/puppeteer-social-image/commit/400b1ec))
+* support custom sizes ([787a49a](https://github.com/chrisvxd/puppeteer-social-image/commit/787a49a))
+
+
+
 # [0.6.0](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.5.5...v0.6.0) (2020-02-03)
 
 
