@@ -10,7 +10,8 @@ const sizeMap = {
   "ig-landscape": { width: 1080, height: 608 },
   "ig-square": { width: 1080, height: 1080 },
   "ig-portrait": { width: 1080, height: 1350 },
-  "ig-story": { width: 1080, height: 1920 }
+  "ig-story": { width: 1080, height: 1920 },
+  pinterest: { width: 1000, height: 1500 }
 };
 
 let testMode = false;
