@@ -6,7 +6,11 @@ import compilePreview from "./helpers/compile-preview";
 
 const sizeMap = {
   facebook: { width: 1200, height: 630 },
-  twitter: { width: 1200, height: 630 }
+  twitter: { width: 1200, height: 630 },
+  "ig-landscape": { width: 1080, height: 608 },
+  "ig-square": { width: 1080, height: 1080 },
+  "ig-portrait": { width: 1080, height: 1350 },
+  "ig-story": { width: 1080, height: 1920 }
 };
 
 let testMode = false;
