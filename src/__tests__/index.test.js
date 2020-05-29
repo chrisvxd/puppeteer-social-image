@@ -4,7 +4,7 @@ import renderSocialImage, { setTestMode } from "../index";
 import puppeteer from "puppeteer";
 
 const snapshotConfig = {
-  failureThreshold: 0.015,
+  failureThreshold: 0.025,
   failureThresholdType: "percent",
   dumpDiffToConsole: true
 };
