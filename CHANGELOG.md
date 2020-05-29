@@ -1,3 +1,12 @@
+## [0.7.1](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.7.0...v0.7.1) (2020-05-29)
+
+
+### Bug Fixes
+
+* don't render broken previews for sizes that don't support it ([a8f3aa5](https://github.com/chrisvxd/puppeteer-social-image/commit/a8f3aa5))
+
+
+
 # [0.7.0](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.6.0...v0.7.0) (2020-05-29)
 
 
