@@ -15,6 +15,7 @@ export default ({
 
   return {
     fontFamily: `"${googleFont}", Arial`,
+    size,
     ...params,
     backgroundImageOverlay:
       typeof params.gradient !== "undefined" ? params.gradient : true,
