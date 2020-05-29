@@ -34,6 +34,20 @@ describe("puppeteer-social-image", () => {
       expect(testImage).toMatchImageSnapshot(snapshotConfig);
     });
 
+    it("must generate an image with a custom size", async () => {
+      await renderSocialImage({
+        templateParams: {
+          title: "Hello, twitter! @chrisvxd"
+        },
+        output: tempPath,
+        size: "512x512"
+      });
+
+      const testImage = fs.readFileSync(tempPath);
+
+      expect(testImage).toMatchImageSnapshot(snapshotConfig);
+    });
+
     it("must accept a custom browser instance", async () => {
       const browser = await puppeteer.launch();
 

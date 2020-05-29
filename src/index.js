@@ -32,7 +32,17 @@ export default async ({
   compileArgs = {}
 }) => {
   // Resolve preferences
-  const _size = sizeMap[size];
+  let _size = sizeMap[size];
+
+  if (!_size) {
+    if (size.indexOf("x") === -1) {
+      throw new Error("Size is invalid");
+    }
+
+    const sizeSplit = size.split("x");
+    _size = { width: parseInt(sizeSplit[0]), height: parseInt(sizeSplit[1]) };
+  }
+
   const { width, height } = _size;
   const customTemplate = customTemplates[template];
   const createTemplate = template && templates[template];
