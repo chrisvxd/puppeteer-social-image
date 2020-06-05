@@ -69,7 +69,7 @@ describe("puppeteer-social-image", () => {
           title: "Hello, twitter! @chrisvxd"
         },
         size: "facebook",
-        type: "jpg"
+        type: "jpeg"
       });
 
       const { mime } = await FileType.fromBuffer(data);
