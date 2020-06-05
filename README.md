@@ -52,8 +52,8 @@ renderSocialImage({
 Add the [`puppeteer-serverless` package](https://github.com/saasify-sh/puppeteer-serverless), and pass it to the render function via the `browser` option:
 
 ```js
-import puppeteer from 'puppeteer-serverless';
-import renderSocialImage from 'puppeteer-social-image';
+import puppeteer from "puppeteer-serverless";
+import renderSocialImage from "puppeteer-social-image";
 
 export default async () => {
   await renderSocialImage({
@@ -63,9 +63,9 @@ export default async () => {
         "https://images.unsplash.com/photo-1557958114-3d2440207108?w=1950&q=80",
       title: "Hello, world"
     },
-    browser:  await puppeteer.launch({})
+    browser: await puppeteer.launch({})
   });
-}
+};
 ```
 
 ## API
@@ -77,7 +77,7 @@ Returns `Promise<Buffer>`.
 Type: function (opts): Promise
 
 - `opts` (object) Configuration options
-- `opts.template` (string) Name of a prebuilt template. Valid values are:
+- `opts.template` (string) Name of a prebuilt template. One of:
   - `basic` (default)
   - `article`
   - `fiftyfifty`
@@ -93,7 +93,7 @@ Type: function (opts): Promise
   - `jpg` (default)
   - `png`
 - `opts.jpegQuality` (number, default `90`) JPEG image quality
-- `opts.size` (string?) Preset size for the image. Valid values are:
+- `opts.size` (string?) Preset size for the image. One of:
   - `facebook`
   - `twitter` (default)
   - `ig-landscape`
