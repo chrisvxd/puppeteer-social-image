@@ -25,7 +25,8 @@ export const setTestMode = val => {
  */
 export default async ({
   jpegQuality = 90,
-  output,
+  output = "",
+  type: userType = "jpeg",
   size = "twitter",
   template = "basic",
   templateParams = {},
@@ -55,7 +56,11 @@ export default async ({
     .extname(output)
     .slice(1)
     .toLowerCase();
-  const type = ext === "jpg" || ext === "jpeg" ? "jpeg" : "png";
+  const type = output
+    ? ext === "jpg" || ext === "jpeg"
+      ? "jpeg"
+      : "png"
+    : userType;
 
   let browser = userBrowser;
 

@@ -87,6 +87,10 @@ Type: function (opts): Promise
   - `opts.customTemplates[key].templateBody`(string) Handlebars template to render in the body for this custom template. Populated with templateParams.
   - `opts.customTemplates[key].templateStyles`(string) CSS to use for this custom template. Passed to the head
 - `opts.output` (string?) Path to write image
+- `opts.type` (string?) Type of the output image. Overwritten by output path extension. One of:
+  - `jpg` (default)
+  - `png`
+- `opts.jpegQuality` (number, default `90`) JPEG image quality
 - `opts.size` (string?) Preset size for the image. Valid values are:
   - `facebook`
   - `twitter` (default)

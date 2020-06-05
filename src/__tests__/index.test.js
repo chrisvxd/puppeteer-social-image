@@ -2,6 +2,7 @@ import fs from "fs";
 import tempy from "tempy";
 import renderSocialImage, { setTestMode } from "../index";
 import puppeteer from "puppeteer";
+import FileType from "file-type";
 
 const snapshotConfig = {
   failureThreshold: 0.025,
@@ -32,6 +33,48 @@ describe("puppeteer-social-image", () => {
       const testImage = fs.readFileSync(tempPath);
 
       expect(testImage).toMatchImageSnapshot(snapshotConfig);
+    });
+
+    it("must use the correct default content type", async () => {
+      const data = await renderSocialImage({
+        templateParams: {
+          title: "Hello, twitter! @chrisvxd"
+        },
+        size: "facebook"
+      });
+
+      const { mime } = await FileType.fromBuffer(data);
+
+      expect(mime).toEqual("image/jpeg");
+    });
+
+    it("must use the correct content type when specified", async () => {
+      const data = await renderSocialImage({
+        templateParams: {
+          title: "Hello, twitter! @chrisvxd"
+        },
+        size: "facebook",
+        type: "png"
+      });
+
+      const { mime } = await FileType.fromBuffer(data);
+
+      expect(mime).toEqual("image/png");
+    });
+
+    it("must infer the content from the path, even when type is specified", async () => {
+      const data = await renderSocialImage({
+        output: tempPath,
+        templateParams: {
+          title: "Hello, twitter! @chrisvxd"
+        },
+        size: "facebook",
+        type: "jpg"
+      });
+
+      const { mime } = await FileType.fromBuffer(data);
+
+      expect(mime).toEqual("image/png");
     });
 
     it("must generate an image with a custom size", async () => {
