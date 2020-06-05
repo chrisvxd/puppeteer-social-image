@@ -1,3 +1,17 @@
+# [0.8.0](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.7.1...v0.8.0) (2020-06-05)
+
+
+### Features
+
+* support custom image types without using a path ([bb621f7](https://github.com/chrisvxd/puppeteer-social-image/commit/bb621f7))
+
+
+### BREAKING CHANGES
+
+* the default type is now JPEG when not specifying the "output" param
+
+
+
 ## [0.7.1](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.7.0...v0.7.1) (2020-05-29)
 
 
