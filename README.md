@@ -90,7 +90,7 @@ Type: function (opts): Promise
   - `opts.customTemplates[key].templateStyles`(string) CSS to use for this custom template. Passed to the head
 - `opts.output` (string?) Path to write image
 - `opts.type` (string?) Type of the output image. Overwritten by output path extension. One of:
-  - `jpg` (default)
+  - `jpeg` (default)
   - `png`
 - `opts.jpegQuality` (number, default `90`) JPEG image quality
 - `opts.size` (string?) Preset size for the image. One of:
