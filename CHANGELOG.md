@@ -1,3 +1,12 @@
+## [0.8.1](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.8.0...v0.8.1) (2020-06-16)
+
+
+### Bug Fixes
+
+* pass all params to custom templates ([327c4b3](https://github.com/chrisvxd/puppeteer-social-image/commit/327c4b3))
+
+
+
 # [0.8.0](https://github.com/chrisvxd/puppeteer-social-image/compare/v0.7.1...v0.8.0) (2020-06-05)
 
 
