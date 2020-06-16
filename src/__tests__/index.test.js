@@ -176,6 +176,38 @@ describe("puppeteer-social-image", () => {
       //   expect(testImage).toMatchImageSnapshot(snapshotConfig);
       // });
 
+      it("must pass all params to custom templates", async () => {
+        // These params were previously suppressed, causing confusion when creating custom templates
+        const body = `<div style="background: white; font-family: Sigmar One; font-size: 48px;">
+      <p>Name: {{ name }}</p>
+      <p>googleFont: {{googleFont}}</p>
+      <p>fontFamily: {{fontFamily}}</p>
+      <p>unsplashId: {{unsplashId}}</p>
+      <p>unsplashKeywords: {{unsplashKeywords}}</p>
+      <p>size: {{size.width}}x{{size.height}}</p>
+    </div>`;
+
+        const styles = "";
+
+        await renderSocialImage({
+          templateParams: {
+            name: "@chrisvxd",
+            googleFont: "Sigmar One",
+            unsplashKeywords: "cat"
+          },
+          templateBody: body,
+          templateStyles: styles,
+          output: tempPath,
+          compileArgs: {
+            testMode: true // We don't actually need to render googleFont
+          }
+        });
+
+        const testImage = fs.readFileSync(tempPath);
+
+        expect(testImage).toMatchImageSnapshot(snapshotConfig);
+      });
+
       it("must accept background param", async () => {
         await renderSocialImage({
           templateParams: {

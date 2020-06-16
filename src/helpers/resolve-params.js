@@ -1,11 +1,9 @@
 import { buildUnsplashUrl } from ".";
 
-export default ({
-  templateParams: { unsplashId, unsplashKeywords, googleFont, ...params },
-  size,
-  imageSize = size
-}) => {
-  let imageUrl = params.imageUrl;
+export default ({ templateParams, size, imageSize = size }) => {
+  const { unsplashId, unsplashKeywords, googleFont } = templateParams;
+
+  let imageUrl = templateParams.imageUrl;
 
   if (unsplashId) {
     imageUrl = buildUnsplashUrl({ unsplashId, size: imageSize });
@@ -16,10 +14,13 @@ export default ({
   return {
     fontFamily: `"${googleFont}", Arial`,
     size,
-    ...params,
+    ...templateParams,
     backgroundImageOverlay:
-      typeof params.gradient !== "undefined" ? params.gradient : true,
+      typeof templateParams.gradient !== "undefined"
+        ? templateParams.gradient
+        : true,
     imageUrl,
-    includeWatermark: params.watermarkUrl || params.watermark || false
+    includeWatermark:
+      templateParams.watermarkUrl || templateParams.watermark || false
   };
 };
